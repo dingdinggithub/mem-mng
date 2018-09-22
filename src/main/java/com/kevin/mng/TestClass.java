@@ -1,4 +1,4 @@
-package com.kevin;
+package com.kevin.mng;
 
 
 public class TestClass {
