@@ -48,8 +48,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+            <state relative-caret-position="114">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -183,7 +183,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore&#10;F:/project_information/doing_project/manage-system/mng/src/main/resources/generator/generatorConfig.xml" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="H:/software_install/git/Git/bin/git.exe" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -285,7 +285,7 @@
       <workItem from="1537622059837" duration="5310000" />
       <workItem from="1537664652103" duration="125000" />
       <workItem from="1537689522988" duration="301000" />
-      <workItem from="1537782693622" duration="361000" />
+      <workItem from="1537782693622" duration="646000" />
     </task>
     <task id="LOCAL-00001" summary="base commit">
       <created>1537606425777</created>
@@ -305,7 +305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12354000" />
+    <option name="totallyTimeSpent" value="12639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -485,10 +485,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.git/info/exclude">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        <state relative-caret-position="114">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
         </state>
       </provider>
     </entry>
