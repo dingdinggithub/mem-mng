@@ -26,7 +26,3 @@ hs_err_pid*
 
 .gitignore
 .idea/uiDesigner.xml
-src/main/resources/
-src/test/
-target/classes/
-target/generated-sources/
