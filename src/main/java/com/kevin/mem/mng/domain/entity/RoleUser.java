@@ -2,24 +2,20 @@ package com.kevin.mem.mng.domain.entity;
 
 import java.util.Date;
 
-public class User {
+public class RoleUser {
     private Long id;
 
     private String userCode;
 
-    private String username;
-
-    private String password;
-
-    private Integer status;
+    private String roleCode;
 
     private Integer isDeleted;
 
-    private Long createBy;
+    private String createBy;
 
     private Date createTime;
 
-    private Long updateBy;
+    private String updateBy;
 
     private Date updateTime;
 
@@ -39,28 +35,12 @@ public class User {
         this.userCode = userCode == null ? null : userCode.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode == null ? null : roleCode.trim();
     }
 
     public Integer getIsDeleted() {
@@ -71,12 +51,12 @@ public class User {
         this.isDeleted = isDeleted;
     }
 
-    public Long getCreateBy() {
+    public String getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(Long createBy) {
-        this.createBy = createBy;
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 
     public Date getCreateTime() {
@@ -87,12 +67,12 @@ public class User {
         this.createTime = createTime;
     }
 
-    public Long getUpdateBy() {
+    public String getUpdateBy() {
         return updateBy;
     }
 
-    public void setUpdateBy(Long updateBy) {
-        this.updateBy = updateBy;
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy == null ? null : updateBy.trim();
     }
 
     public Date getUpdateTime() {

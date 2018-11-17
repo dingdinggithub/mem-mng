@@ -1,4 +1,4 @@
-package com.kevin.mem.mng.log;
+package com.kevin.mem.mng.common.log;
 
 import java.lang.annotation.*;
 

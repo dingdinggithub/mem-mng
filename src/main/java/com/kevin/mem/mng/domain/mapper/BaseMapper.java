@@ -1,7 +1,24 @@
 package com.kevin.mem.mng.domain.mapper;
 
-import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.mapper.common.MySqlMapper;
+import com.github.pagehelper.Page;
 
-public interface BaseMapper<T> extends Mapper<T>, MySqlMapper<T> {
+/**
+ * @author 丁海峰
+ * @DateTime 2018/11/13 22:40
+ * @Description
+ */
+public interface BaseMapper<T> {
+    int deleteByPrimaryKey(Long id);
+
+    int insert(T record);
+
+    int insertSelective(T record);
+
+    T selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(T record);
+
+    int updateByPrimaryKey(T record);
+
+    Page<T> queryPage(T model);
 }

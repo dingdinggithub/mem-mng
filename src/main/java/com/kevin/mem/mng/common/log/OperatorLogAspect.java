@@ -1,4 +1,4 @@
-package com.kevin.mem.mng.log;
+package com.kevin.mem.mng.common.log;
 
 import com.kevin.common.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 @Slf4j
 public class OperatorLogAspect {
 
-    @Pointcut("@annotation(com.kevin.mem.mng.log.OperatorLog)")
+    @Pointcut("@annotation(com.kevin.mem.mng.common.log.OperatorLog)")
     public void operatorLog() {
     }
 

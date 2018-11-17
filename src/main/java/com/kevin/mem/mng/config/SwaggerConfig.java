@@ -44,7 +44,7 @@ public class SwaggerConfig {
                 .protocols(set)
                 .apiInfo(apiInfo)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.kevin.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.kevin.mem.mng.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
