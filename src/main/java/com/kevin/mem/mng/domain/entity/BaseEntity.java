@@ -26,23 +26,25 @@ package com.kevin.mem.mng.domain.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
- * 基础信息
- *
- * @author 丁海峰
+ * @Author 丁海峰
+ * @DateTime 2018/11/17 14:38
+ * @Description 基础实体信息
  */
 @Data
 public class BaseEntity {
-    @Id
-    @Column(name = "Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
-    @Transient
-    private Integer page = 1;
+    private Long id;
 
-    @Transient
-    private Integer rows = 10;
+    private Integer isDeleted;
+
+    private Long createBy;
+
+    private LocalDateTime createTime;
+
+    private Long updateBy;
+
+    private LocalDateTime updateTime;
 }

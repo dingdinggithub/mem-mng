@@ -2,6 +2,9 @@ package com.kevin.mem.mng.service;
 
 import com.github.pagehelper.Page;
 import com.kevin.mem.mng.common.PageRequest;
+import com.kevin.mem.mng.domain.entity.BaseEntity;
+
+import java.util.List;
 
 /**
  * @author 丁海峰
@@ -9,11 +12,13 @@ import com.kevin.mem.mng.common.PageRequest;
  * @Description
  */
 
-public interface BaseService<T> {
+public interface BaseService<T extends BaseEntity> {
 
-    int deleteByCode(Long id);
+    int deleteById(Long id);
 
     int insert(T record);
+
+    int batchInsert(List<T> record);
 
     T selectByCode(Long id);
 

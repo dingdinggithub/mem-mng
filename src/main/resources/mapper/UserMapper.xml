@@ -17,27 +17,9 @@
     id, user_code, username, password, status, is_deleted, create_by, create_time, update_by, 
     update_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from t_mem_user
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from t_mem_user
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.kevin.mem.mng.domain.entity.User" >
-    insert into t_mem_user (id, user_code, username, 
-      password, status, is_deleted, 
-      create_by, create_time, update_by, 
-      update_time)
-    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}, 
-      #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
-      #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.kevin.mem.mng.domain.entity.User" >
+
+  <!--新增接口开始-->
+  <insert id="insertUser" parameterType="com.kevin.mem.mng.domain.entity.User" >
     insert into t_mem_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -73,114 +55,136 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=BIGINT},
+        #{id},
       </if>
       <if test="userCode != null" >
-        #{userCode,jdbcType=VARCHAR},
+        #{userCode},
       </if>
       <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
+        #{username},
       </if>
       <if test="password != null" >
-        #{password,jdbcType=VARCHAR},
+        #{password},
       </if>
       <if test="status != null" >
-        #{status,jdbcType=INTEGER},
+        #{status},
       </if>
       <if test="isDeleted != null" >
-        #{isDeleted,jdbcType=INTEGER},
+        #{isDeleted},
       </if>
       <if test="createBy != null" >
-        #{createBy,jdbcType=BIGINT},
+        #{createBy},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime},
       </if>
       <if test="updateBy != null" >
-        #{updateBy,jdbcType=BIGINT},
+        #{updateBy},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
+        #{updateTime},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.kevin.mem.mng.domain.entity.User" >
+
+  <!--新增接口开始-->
+  <insert id="batchInsertUser">
+    insert into t_mem_user
+    values
+    <foreach collection="recordList" open="(" close=")" item="item" separator=",">
+          #{item.id},
+          #{item.userCode},
+          #{item.username},
+          #{item.password},
+          #{item.status},
+          #{item.isDeleted},
+          #{item.createBy},
+          #{item.createTime},
+          #{item.updateBy},
+          #{item.updateTime}
+    </foreach>
+  </insert>
+
+  <!--更新接口开始-->
+  <update id="updateById" parameterType="com.kevin.mem.mng.domain.entity.User" >
     update t_mem_user
     <set >
       <if test="userCode != null" >
-        user_code = #{userCode,jdbcType=VARCHAR},
+        user_code = #{userCode},
       </if>
       <if test="username != null" >
-        username = #{username,jdbcType=VARCHAR},
+        username = #{username},
       </if>
       <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
+        password = #{password},
       </if>
       <if test="status != null" >
-        status = #{status,jdbcType=INTEGER},
+        status = #{status},
       </if>
       <if test="isDeleted != null" >
-        is_deleted = #{isDeleted,jdbcType=INTEGER},
+        is_deleted = #{isDeleted},
       </if>
       <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=BIGINT},
+        create_by = #{createBy},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime},
       </if>
       <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=BIGINT},
+        update_by = #{updateBy},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.kevin.mem.mng.domain.entity.User" >
-    update t_mem_user
-    set user_code = #{userCode,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      is_deleted = #{isDeleted,jdbcType=INTEGER},
-      create_by = #{createBy,jdbcType=BIGINT},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_by = #{updateBy,jdbcType=BIGINT},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id}
   </update>
 
+  <!--删除接口开始-->
+  <delete id="deleteById" parameterType="java.lang.Long" >
+    delete from t_mem_user
+    where id = #{id}
+  </delete>
+
+  <!--查询接口开始-->
   <select id="queryPage" resultMap="BaseResultMap" parameterType="com.kevin.mem.mng.domain.entity.User">
     select * from t_mem_user
     <where>
       <if test="userCode != null" >
-        and user_code = #{userCode,jdbcType=VARCHAR}
+        and user_code = #{userCode}
       </if>
       <if test="username != null" >
-        and username = #{username,jdbcType=VARCHAR}
+        and username = #{username}
       </if>
       <if test="password != null" >
-        and password = #{password,jdbcType=VARCHAR}
+        and password = #{password}
       </if>
       <if test="status != null" >
-        and status = #{status,jdbcType=INTEGER}
+        and status = #{status}
       </if>
       <if test="isDeleted != null" >
-        and is_deleted = #{isDeleted,jdbcType=INTEGER}
+        and is_deleted = #{isDeleted}
       </if>
       <if test="createBy != null" >
-        and create_by = #{createBy,jdbcType=BIGINT}
+        and create_by = #{createBy}
       </if>
       <if test="createTime != null" >
-        and create_time = #{createTime,jdbcType=TIMESTAMP}
+        and create_time = #{createTime}
       </if>
       <if test="updateBy != null" >
-        and update_by = #{updateBy,jdbcType=BIGINT}
+        and update_by = #{updateBy}
       </if>
       <if test="updateTime != null" >
-        and update_time = #{updateTime,jdbcType=TIMESTAMP}
+        and update_time = #{updateTime}
       </if>
     </where>
   </select>
+
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_mem_user
+    where id = #{id}
+  </select>
+
 </mapper>
