@@ -24,63 +24,6 @@ import java.util.ArrayList;
 @Api(description = "服务接口")
 public class ServiceController extends BaseController{
 
-    @Autowired
-    private Mapper mapper;
-
-    @Autowired
-    private DataSource dataSource;
-
-    /**
-     * 测试插入数据库表接口
-     *
-     * @return String
-     */
-    @ApiOperation("分页查询数据库表数据接口")
-    @PostMapping("/listUser")
-    @OperatorLog(description = "/listUser")
-    public BaseResponse listTest(@RequestBody PageRequest pageRequest){
-        log.info("分页查找开始");
-        return null;//BaseResponse.createSuccessResult(userService.listUser(pageRequest));
-    }
-
-    /**
-     * 测试插入数据库表接口
-     *
-     * @return String
-     */
-    @ApiOperation("测试插入数据库表接口")
-    @PostMapping("/insertUser")
-    @OperatorLog(description = "/insertUser")
-    public BaseResponse insertTest(@RequestBody @Validated User user){
-        return null;//BaseResponse.createSuccessResult(userService.insert(user));
-    }
-
-    /**
-     * 数据库连接测试
-     *
-     * @return String
-     */
-    @ApiOperation("数据库连接测试接口")
-    @GetMapping("/connectMysql")
-    public BaseResponse connectMysql() throws Exception{
-        Connection connection = dataSource.getConnection();
-        return BaseResponse.createSuccessResult(connection);
-    }
-
-    /**
-     * 获取列表内容接口
-     *
-     * @return String
-     */
-    @ApiOperation("获取列表内容接口")
-    @GetMapping("/getArray")
-    public BaseResponse getArray(){
-        ArrayList<String> strArr = new ArrayList<>();
-        strArr.add("First-Name");
-        strArr.add("Second-Name");
-        return BaseResponse.createSuccessResult(strArr);
-    }
-
     /**
      * 打印日志接口
      *

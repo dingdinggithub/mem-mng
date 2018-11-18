@@ -1,6 +1,7 @@
 package com.kevin.mem.mng.domain.mapper;
 
 import com.github.pagehelper.Page;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,14 +21,6 @@ public interface BaseMapper<T> {
      */
     int insert(T record);
 
-    /**
-     * 批量插入实体
-     *
-     * @param record
-     * @return
-     */
-    int batchInsert(List<T> record);
-
     /* ********************************更新操作************************************************/
     /**
      * 更新实体
@@ -44,7 +37,14 @@ public interface BaseMapper<T> {
      * @param id
      * @return
      */
-    int deleteById(Long id);
+    int deleteById(@Param("id") Long id);
+
+    /**
+     * 根据id批量删除实体(物理删)
+     * @param idList
+     * @return
+     */
+    int batchDelete(@Param("idList") List<Long> idList);
 
     /* ********************************查询操作************************************************/
     /**
@@ -61,6 +61,5 @@ public interface BaseMapper<T> {
      * @param id
      * @return
      */
-    T selectById(Long id);
-
+    T selectById(@Param("id") Long id);
 }

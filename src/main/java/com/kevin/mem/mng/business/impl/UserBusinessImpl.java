@@ -7,10 +7,7 @@ import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.business.UserBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.User;
-import com.kevin.mem.mng.dto.request.user.UserBatchInsertReqDTO;
-import com.kevin.mem.mng.dto.request.user.UserInsertReqDTO;
-import com.kevin.mem.mng.dto.request.user.UserPageReqDTO;
-import com.kevin.mem.mng.dto.request.user.UserUpdateReqDTO;
+import com.kevin.mem.mng.dto.request.user.*;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 import com.kevin.mem.mng.service.BaseService;
 import com.kevin.mem.mng.service.UserService;
@@ -30,46 +27,56 @@ public class UserBusinessImpl implements UserBusiness {
     private Mapper mapper;
 
     @Autowired
-    private BaseService<User> baseService;
-
-    @Autowired
     private UserService userService;
-
 
     @Override
     public BaseResponse insertUser(UserInsertReqDTO user) {
 
-        int result = baseService.insert(mapper.map(user,User.class));
+        int result = userService.insert(mapper.map(user,User.class));
 
         return BaseResponse.createSuccessResult(null);
     }
 
     @Override
     public BaseResponse batchInsertUser(UserBatchInsertReqDTO userBatchInsertReqDTO) {
-        List<User> userList = userBatchInsertReqDTO.getUserInsertReqDTOList().stream()
+        List<User> userList = userBatchInsertReqDTO.getInsertUserList().stream()
                 .map(item-> mapper.map(item, User.class)).collect(Collectors.toList());
-        int result = baseService.batchInsert(userList);
+        userService.batchInsert(userList);
 
         return BaseResponse.createSuccessResult(null);
     }
 
     @Override
     public BaseResponse updateUser(UserUpdateReqDTO user) {
-        int result = baseService.updateByPrimaryKey(mapper.map(user,User.class));
+        int result = userService.updateById(mapper.map(user,User.class));
 
+        return BaseResponse.createSuccessResult(null);
+    }
+
+    @Override
+    public BaseResponse batchUpdateUser(UserBatchUpdateReqDTO userBatchUpdateReqDTO) {
+        List<User> userList = userBatchUpdateReqDTO.getUpdateUserList().stream()
+                .map(item-> mapper.map(item, User.class)).collect(Collectors.toList());
+        userService.batchUpdate(userList);
         return BaseResponse.createSuccessResult(null);
     }
 
     @Override
     public BaseResponse deleteUser(long userId) {
-        int result = baseService.deleteById(userId);
+        int result = userService.deleteById(userId);
 
         return BaseResponse.createSuccessResult(null);
     }
 
     @Override
+    public BaseResponse batchDeleteUser(UserBatchDeleteReqDTO reqDTO) {
+        userService.batchDelete(reqDTO.getIdList());
+        return BaseResponse.createSuccessResult(null);
+    }
+
+    @Override
     public BaseResponse queryUser(long userId) {
-        User result = baseService.selectByCode(userId);
+        User result = userService.selectByCode(userId);
         return BaseResponse.createSuccessResult(mapper.map(result, UserPageResDTO.class));
     }
 
@@ -81,7 +88,7 @@ public class UserBusinessImpl implements UserBusiness {
         request.setPageSize(pageRequest.getPageSize());
         request.setModel(mapper.map(pageRequest.getModel(), User.class));
 
-        Page<User> userList = baseService.queryPage(request);
+        Page<User> userList = userService.queryPage(request);
 
         List<UserPageResDTO> userPageResDTOList = userList.stream().map(item->mapper
                 .map(item,UserPageResDTO.class)).collect(Collectors.toList());
@@ -90,6 +97,14 @@ public class UserBusinessImpl implements UserBusiness {
         pageQueryResponse.setPageIndex(userList.getPageNum()+1);
         pageQueryResponse.setPageSize(userList.getPageSize());
         return pageQueryResponse;
+    }
+
+    @Override
+    public BaseResponse<List<UserPageResDTO>> queryAll(UserPageReqDTO reqDTO) {
+        return BaseResponse.createSuccessResult(
+                userService.queryAll(mapper.map(reqDTO,User.class))
+                                        .stream().map(item -> mapper.map(item,UserPageResDTO.class))
+                                                 .collect(Collectors.toList()));
     }
 
 }

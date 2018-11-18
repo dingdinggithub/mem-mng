@@ -5,9 +5,7 @@ import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.business.UserBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.common.log.OperatorLog;
-import com.kevin.mem.mng.dto.request.user.UserInsertReqDTO;
-import com.kevin.mem.mng.dto.request.user.UserPageReqDTO;
-import com.kevin.mem.mng.dto.request.user.UserUpdateReqDTO;
+import com.kevin.mem.mng.dto.request.user.*;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -16,6 +14,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -29,15 +29,31 @@ public class UserController extends BaseController {
     @ApiOperation("插入用戶接口")
     @PostMapping("/insertUser")
     @OperatorLog(description = "/insertUser")
-    public BaseResponse insertUser(@RequestBody @Validated UserInsertReqDTO user, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
-        return userBusiness.insertUser(user);
+    public BaseResponse insertUser(@RequestBody @Validated UserInsertReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+        return userBusiness.insertUser(reqDTO);
+    }
+
+    @ApiOperation("批量插入用戶接口")
+    @PostMapping("/batchInsertUser")
+    @OperatorLog(description = "/batchInsertUser")
+    public BaseResponse batchInsertUser(@RequestBody @Validated UserBatchInsertReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+
+        return userBusiness.batchInsertUser(reqDTO);
     }
 
     @ApiOperation("更新用戶接口")
     @PostMapping("/updateUser")
     @OperatorLog(description = "/updateUser")
-    public BaseResponse updateUser(@RequestBody @Validated UserUpdateReqDTO user, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
-        return userBusiness.updateUser(user);
+    public BaseResponse updateUser(@RequestBody @Validated UserUpdateReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+        return userBusiness.updateUser(reqDTO);
+    }
+
+    @ApiOperation("批量更新用戶接口")
+    @PostMapping("/batchUpdateUser")
+    @OperatorLog(description = "/batchUpdateUser")
+    public BaseResponse batchUpdateUser(@RequestBody @Validated UserBatchUpdateReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+
+        return userBusiness.batchUpdateUser(reqDTO);
     }
 
     @ApiOperation("刪除用戶接口")
@@ -45,6 +61,13 @@ public class UserController extends BaseController {
     @OperatorLog(description = "/deleteUser")
     public BaseResponse deleteUser(@RequestBody @Validated long userId, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
         return userBusiness.deleteUser(userId);
+    }
+
+    @ApiOperation("批量刪除用戶接口")
+    @PostMapping("/batchDeleteUser")
+    @OperatorLog(description = "/batchDeleteUser")
+    public BaseResponse batchDeleteUser(@RequestBody @Validated UserBatchDeleteReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+        return userBusiness.batchDeleteUser(reqDTO);
     }
 
     @ApiOperation("根据id查询用戶接口")
@@ -59,6 +82,13 @@ public class UserController extends BaseController {
     @OperatorLog(description = "/queryPage")
     public PageQueryResponse<UserPageResDTO> queryPage(@RequestBody @Validated PageRequest<UserPageReqDTO> pageRequest){
         return userBusiness.queryPage(pageRequest);
+    }
+
+    @ApiOperation("根据条件查询所有用戶接口")
+    @PostMapping("/queryAll")
+    @OperatorLog(description = "/queryAll")
+    public BaseResponse<List<UserPageResDTO>> queryAll(@RequestBody @Validated UserPageReqDTO reqDTO){
+        return userBusiness.queryAll(reqDTO);
     }
 
 }

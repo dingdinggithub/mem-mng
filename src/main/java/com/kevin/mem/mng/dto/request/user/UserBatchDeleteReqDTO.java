@@ -13,5 +13,5 @@ import java.util.List;
  */
 @Data
 public class UserBatchDeleteReqDTO implements Serializable, DTO {
-    private List<Long> id;
+    private List<Long> idList;
 }

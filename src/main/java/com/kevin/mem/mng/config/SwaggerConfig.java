@@ -20,12 +20,12 @@ import java.util.Set;
  */
 @Component
 public class SwaggerConfig {
-    @Value("${swagger.host}")
-    String swaggerHost;
-    @Value("${swagger.scheme}")
-    String swaggerScheme;
-    @Value("${swagger.basepath}")
-    String basepath;
+    //@Value("${swagger.host}")
+    String swaggerHost = "localhost:8001";
+    //@Value("${swagger.scheme}")
+    String swaggerScheme = "http";
+    //@Value("${swagger.basepath}")
+    String basepath = "/";
 
 
     @Bean

@@ -1,6 +1,7 @@
 package com.kevin.mem.mng.dto.request.user;
 
 import com.kevin.common.domain.dto.DTO;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
  * @DateTime 2018/11/17 14:34
  * @Description
  */
+@Data
 public class UserBatchUpdateReqDTO implements Serializable, DTO {
-    List<UserUpdateReqDTO> userUpdateReqDTOList;
+    List<UserUpdateReqDTO> updateUserList;
 }

@@ -14,15 +14,21 @@ import java.util.List;
 
 public interface BaseService<T extends BaseEntity> {
 
-    int deleteById(Long id);
-
     int insert(T record);
 
-    int batchInsert(List<T> record);
+    void batchInsert(List<T> recordList);
+
+    int updateById(T record);
+
+    void batchUpdate(List<T> recordList);
+
+    int deleteById(Long id);
+
+    void batchDelete(List<Long> idList);
 
     T selectByCode(Long id);
 
-    int updateByPrimaryKey(T record);
-
     Page<T> queryPage(PageRequest<T> record);
+
+    List<T> queryAll(T record);
 }
