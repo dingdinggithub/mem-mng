@@ -18,10 +18,8 @@ import java.util.HashSet;
 import java.util.Optional;
 
 /**
- * baseController
- * 封装统一的异常处理
- *
- * @wanglin
+ * @Description baseController封装统一的异常处理
+ * @Author 丁海峰
  */
 @Slf4j
 public class BaseController {
@@ -105,3 +103,4 @@ public class BaseController {
         return baseResponse;
     }
 }
+	

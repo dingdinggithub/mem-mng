@@ -1,6 +1,5 @@
 package com.kevin.mem.mng.business.impl;
 
-
 import com.github.pagehelper.Page;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
@@ -19,6 +18,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 用户BusinessImpl
+ * @author 丁海峰
+ * @date 2018-11-24 02:42:18
+ */
 @Service
 @Slf4j
 public class UserBusinessImpl implements UserBusiness {
@@ -62,8 +66,8 @@ public class UserBusinessImpl implements UserBusiness {
     }
 
     @Override
-    public BaseResponse deleteUser(long userId) {
-        int result = userService.deleteById(userId);
+    public BaseResponse deleteUser(Long id) {
+        int result = userService.deleteById(id);
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -75,8 +79,8 @@ public class UserBusinessImpl implements UserBusiness {
     }
 
     @Override
-    public BaseResponse queryUser(long userId) {
-        User result = userService.selectByCode(userId);
+    public BaseResponse queryUser(Long id) {
+        User result = userService.selectByCode(id);
         return BaseResponse.createSuccessResult(mapper.map(result, UserPageResDTO.class));
     }
 
@@ -107,4 +111,6 @@ public class UserBusinessImpl implements UserBusiness {
                                                  .collect(Collectors.toList()));
     }
 
+
 }
+	

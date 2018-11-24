@@ -6,14 +6,18 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
+import java.time.LocalDateTime;
 
 /**
+ * 用户BatchInsertReqDTO
  * @author 丁海峰
- * @DateTime 2018/11/17 14:32
- * @Description
+ * @date 2018-11-24 02:26:48
  */
 @Data
 public class UserBatchInsertReqDTO implements Serializable, DTO {
-    @NotNull
+
+	@NotNull
     List<UserInsertReqDTO> insertUserList;
+	
 }
+	

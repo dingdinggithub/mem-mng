@@ -1,6 +1,5 @@
 package com.kevin.mem.mng.service.impl;
 
-
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.kevin.mem.mng.common.PageRequest;
@@ -15,11 +14,16 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * 用户ServiceImpl
+ * @author 丁海峰
+ * @date 2018-11-24 02:37:23
+ */
 @Service
 @Slf4j
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
 
-    @Autowired
+	@Autowired
     private UserMapper userMapper;
 
     @Override
@@ -86,4 +90,6 @@ public class UserServiceImpl implements UserService {
     public List<User> queryAll(User record) {
         return userMapper.queryPage(record);
     }
+
 }
+	

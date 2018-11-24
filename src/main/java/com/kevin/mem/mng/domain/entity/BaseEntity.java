@@ -36,15 +36,33 @@ import java.time.LocalDateTime;
 @Data
 public class BaseEntity {
 
+    /**
+     * 主键
+     */
     private Long id;
 
+    /**
+     * 备注
+     */
+    private String remark;
+    /**
+     * 是否已删除
+     */
     private Integer isDeleted;
-
-    private Long createBy;
-
+    /**
+     * 创建人
+     */
+    private String createBy;
+    /**
+     * 更新人
+     */
+    private String updateBy;
+    /**
+     * 创建时间
+     */
     private LocalDateTime createTime;
-
-    private Long updateBy;
-
+    /**
+     * 更新时间
+     */
     private LocalDateTime updateTime;
 }
