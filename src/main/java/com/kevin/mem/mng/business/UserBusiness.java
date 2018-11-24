@@ -4,7 +4,6 @@ package com.kevin.mem.mng.business;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.common.PageRequest;
-import com.kevin.mem.mng.domain.entity.User;
 import com.kevin.mem.mng.dto.request.user.*;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 
