@@ -16,14 +16,15 @@ import java.util.List;
 
 /**
  * 用户角色关系ServiceImpl
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:37:25
  */
 @Service
 @Slf4j
-public class RoleUserServiceImpl implements RoleUserService{
+public class RoleUserServiceImpl implements RoleUserService {
 
-	@Autowired
+    @Autowired
     private RoleUserMapper roleUserMapper;
 
     @Override
@@ -46,10 +47,10 @@ public class RoleUserServiceImpl implements RoleUserService{
     public void batchInsert(List<RoleUser> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             roleUserMapper.insert(record);
@@ -71,10 +72,10 @@ public class RoleUserServiceImpl implements RoleUserService{
     public void batchUpdate(List<RoleUser> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setUpdateTime(LocalDateTime.now());
             roleUserMapper.updateById(record);
         });

@@ -11,6 +11,6 @@ import java.io.Serializable;
  * @Description
  */
 @Data
-public class BaseRequestDTO <T> implements Serializable, DTO {
+public class BaseRequestDTO<T> implements Serializable, DTO {
     T model;
 }

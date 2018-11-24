@@ -16,14 +16,15 @@ import java.util.List;
 
 /**
  * 部门ServiceImpl
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:37:26
  */
 @Service
 @Slf4j
-public class DeptServiceImpl implements DeptService{
+public class DeptServiceImpl implements DeptService {
 
-	@Autowired
+    @Autowired
     private DeptMapper deptMapper;
 
     @Override
@@ -46,10 +47,10 @@ public class DeptServiceImpl implements DeptService{
     public void batchInsert(List<Dept> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             deptMapper.insert(record);
@@ -71,10 +72,10 @@ public class DeptServiceImpl implements DeptService{
     public void batchUpdate(List<Dept> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setUpdateTime(LocalDateTime.now());
             deptMapper.updateById(record);
         });

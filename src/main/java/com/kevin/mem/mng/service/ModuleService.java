@@ -1,12 +1,14 @@
 package com.kevin.mem.mng.service;
 
-import com.kevin.mem.mng.domain.entity.*;
+import com.kevin.mem.mng.domain.entity.Module;
+
 /**
  * 模块Service
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:30:07
  */
-public interface ModuleService extends BaseService<Module>{
-	
+public interface ModuleService extends BaseService<Module> {
+
 }
 	

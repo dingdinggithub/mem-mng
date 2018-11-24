@@ -37,7 +37,7 @@ public class JsonUtils {
         if (object == null) {
             return null;
         } else if (object instanceof String) {
-            return (String)object;
+            return (String) object;
         } else {
             try {
                 return OBJECT_MAPPER.writeValueAsString(object);
@@ -83,12 +83,12 @@ public class JsonUtils {
     }
 
     public static <T> List<T> toList(String json) {
-        return (List)readValue(json, new TypeReference<List<T>>() {
+        return (List) readValue(json, new TypeReference<List<T>>() {
         });
     }
 
     public static <K, V> Map<K, V> toMap(String json) {
-        return (Map)readValue(json, new TypeReference<Map<K, V>>() {
+        return (Map) readValue(json, new TypeReference<Map<K, V>>() {
         });
     }
 

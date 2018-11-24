@@ -16,14 +16,15 @@ import java.util.List;
 
 /**
  * 权限模块关系ServiceImpl
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:37:25
  */
 @Service
 @Slf4j
-public class AuthModuleServiceImpl implements AuthModuleService{
+public class AuthModuleServiceImpl implements AuthModuleService {
 
-	@Autowired
+    @Autowired
     private AuthModuleMapper authModuleMapper;
 
     @Override
@@ -46,10 +47,10 @@ public class AuthModuleServiceImpl implements AuthModuleService{
     public void batchInsert(List<AuthModule> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             authModuleMapper.insert(record);
@@ -71,10 +72,10 @@ public class AuthModuleServiceImpl implements AuthModuleService{
     public void batchUpdate(List<AuthModule> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setUpdateTime(LocalDateTime.now());
             authModuleMapper.updateById(record);
         });

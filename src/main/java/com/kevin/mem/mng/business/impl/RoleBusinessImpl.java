@@ -8,7 +8,6 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.Role;
 import com.kevin.mem.mng.dto.request.role.*;
 import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
-import com.kevin.mem.mng.service.BaseService;
 import com.kevin.mem.mng.service.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.dozer.Mapper;
@@ -20,6 +19,7 @@ import java.util.stream.Collectors;
 
 /**
  * 角色BusinessImpl
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:42:19
  */
@@ -36,7 +36,7 @@ public class RoleBusinessImpl implements RoleBusiness {
     @Override
     public BaseResponse insertRole(RoleInsertReqDTO role) {
 
-        int result = roleService.insert(mapper.map(role,Role.class));
+        int result = roleService.insert(mapper.map(role, Role.class));
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -44,7 +44,7 @@ public class RoleBusinessImpl implements RoleBusiness {
     @Override
     public BaseResponse batchInsertRole(RoleBatchInsertReqDTO roleBatchInsertReqDTO) {
         List<Role> roleList = roleBatchInsertReqDTO.getInsertRoleList().stream()
-                .map(item-> mapper.map(item, Role.class)).collect(Collectors.toList());
+                .map(item -> mapper.map(item, Role.class)).collect(Collectors.toList());
         roleService.batchInsert(roleList);
 
         return BaseResponse.createSuccessResult(null);
@@ -52,7 +52,7 @@ public class RoleBusinessImpl implements RoleBusiness {
 
     @Override
     public BaseResponse updateRole(RoleUpdateReqDTO role) {
-        int result = roleService.updateById(mapper.map(role,Role.class));
+        int result = roleService.updateById(mapper.map(role, Role.class));
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -60,7 +60,7 @@ public class RoleBusinessImpl implements RoleBusiness {
     @Override
     public BaseResponse batchUpdateRole(RoleBatchUpdateReqDTO roleBatchUpdateReqDTO) {
         List<Role> roleList = roleBatchUpdateReqDTO.getUpdateRoleList().stream()
-                .map(item-> mapper.map(item, Role.class)).collect(Collectors.toList());
+                .map(item -> mapper.map(item, Role.class)).collect(Collectors.toList());
         roleService.batchUpdate(roleList);
         return BaseResponse.createSuccessResult(null);
     }
@@ -94,11 +94,11 @@ public class RoleBusinessImpl implements RoleBusiness {
 
         Page<Role> roleList = roleService.queryPage(request);
 
-        List<RolePageResDTO> rolePageResDTOList = roleList.stream().map(item->mapper
-                .map(item,RolePageResDTO.class)).collect(Collectors.toList());
+        List<RolePageResDTO> rolePageResDTOList = roleList.stream().map(item -> mapper
+                .map(item, RolePageResDTO.class)).collect(Collectors.toList());
 
         PageQueryResponse<RolePageResDTO> pageQueryResponse = PageQueryResponse.createSuccessResult(rolePageResDTOList);
-        pageQueryResponse.setPageIndex(roleList.getPageNum()+1);
+        pageQueryResponse.setPageIndex(roleList.getPageNum() + 1);
         pageQueryResponse.setPageSize(roleList.getPageSize());
         return pageQueryResponse;
     }
@@ -106,9 +106,9 @@ public class RoleBusinessImpl implements RoleBusiness {
     @Override
     public BaseResponse<List<RolePageResDTO>> queryAll(RolePageReqDTO reqDTO) {
         return BaseResponse.createSuccessResult(
-                roleService.queryAll(mapper.map(reqDTO,Role.class))
-                                        .stream().map(item -> mapper.map(item,RolePageResDTO.class))
-                                                 .collect(Collectors.toList()));
+                roleService.queryAll(mapper.map(reqDTO, Role.class))
+                        .stream().map(item -> mapper.map(item, RolePageResDTO.class))
+                        .collect(Collectors.toList()));
     }
 
 

@@ -1,4 +1,5 @@
 package com.kevin.mem.mng.controller;
+
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.business.AuthModuleBusiness;
@@ -28,14 +29,14 @@ public class AuthModuleController extends BaseController {
     @ApiOperation("插入接口")
     @PostMapping("/insertAuthModule")
     @OperatorLog(description = "/insertAuthModule")
-    public BaseResponse insertAuthModule(@RequestBody @Validated AuthModuleInsertReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+    public BaseResponse insertAuthModule(@RequestBody @Validated AuthModuleInsertReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName) {
         return authModuleBusiness.insertAuthModule(reqDTO);
     }
 
     @ApiOperation("批量插入接口")
     @PostMapping("/batchInsertAuthModule")
     @OperatorLog(description = "/batchInsertAuthModule")
-    public BaseResponse batchInsertAuthModule(@RequestBody @Validated AuthModuleBatchInsertReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+    public BaseResponse batchInsertAuthModule(@RequestBody @Validated AuthModuleBatchInsertReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName) {
 
         return authModuleBusiness.batchInsertAuthModule(reqDTO);
     }
@@ -43,14 +44,14 @@ public class AuthModuleController extends BaseController {
     @ApiOperation("更新接口")
     @PostMapping("/updateAuthModule")
     @OperatorLog(description = "/updateAuthModule")
-    public BaseResponse updateAuthModule(@RequestBody @Validated AuthModuleUpdateReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+    public BaseResponse updateAuthModule(@RequestBody @Validated AuthModuleUpdateReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName) {
         return authModuleBusiness.updateAuthModule(reqDTO);
     }
 
     @ApiOperation("批量更新接口")
     @PostMapping("/batchUpdateAuthModule")
     @OperatorLog(description = "/batchUpdateAuthModule")
-    public BaseResponse batchUpdateAuthModule(@RequestBody @Validated AuthModuleBatchUpdateReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+    public BaseResponse batchUpdateAuthModule(@RequestBody @Validated AuthModuleBatchUpdateReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName) {
 
         return authModuleBusiness.batchUpdateAuthModule(reqDTO);
     }
@@ -58,35 +59,35 @@ public class AuthModuleController extends BaseController {
     @ApiOperation("刪除接口")
     @PostMapping("/deleteAuthModule")
     @OperatorLog(description = "/deleteAuthModule")
-    public BaseResponse deleteAuthModule(@RequestBody @Validated Long id, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+    public BaseResponse deleteAuthModule(@RequestBody @Validated Long id, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName) {
         return authModuleBusiness.deleteAuthModule(id);
     }
 
     @ApiOperation("批量刪除接口")
     @PostMapping("/batchDeleteAuthModule")
     @OperatorLog(description = "/batchDeleteAuthModule")
-    public BaseResponse batchDeleteAuthModule(@RequestBody @Validated AuthModuleBatchDeleteReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName){
+    public BaseResponse batchDeleteAuthModule(@RequestBody @Validated AuthModuleBatchDeleteReqDTO reqDTO, @RequestHeader(required = false) @NotBlank(message = "用户名不能为空") String userName) {
         return authModuleBusiness.batchDeleteAuthModule(reqDTO);
     }
 
     @ApiOperation("根据id查询接口")
     @PostMapping("/queryAuthModule")
     @OperatorLog(description = "/queryAuthModule")
-    public BaseResponse queryAuthModule(@RequestBody @Validated Long id){
+    public BaseResponse queryAuthModule(@RequestBody @Validated Long id) {
         return authModuleBusiness.queryAuthModule(id);
     }
 
     @ApiOperation("分页查询接口")
     @PostMapping("/queryPage")
     @OperatorLog(description = "/queryPage")
-    public PageQueryResponse<AuthModulePageResDTO> queryPage(@RequestBody @Validated PageRequest<AuthModulePageReqDTO> pageRequest){
+    public PageQueryResponse<AuthModulePageResDTO> queryPage(@RequestBody @Validated PageRequest<AuthModulePageReqDTO> pageRequest) {
         return authModuleBusiness.queryPage(pageRequest);
     }
 
     @ApiOperation("根据条件查询所有接口")
     @PostMapping("/queryAll")
     @OperatorLog(description = "/queryAll")
-    public BaseResponse<List<AuthModulePageResDTO>> queryAll(@RequestBody @Validated AuthModulePageReqDTO reqDTO){
+    public BaseResponse<List<AuthModulePageResDTO>> queryAll(@RequestBody @Validated AuthModulePageReqDTO reqDTO) {
         return authModuleBusiness.queryAll(reqDTO);
     }
 

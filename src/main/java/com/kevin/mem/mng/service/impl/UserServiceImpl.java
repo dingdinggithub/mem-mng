@@ -16,14 +16,15 @@ import java.util.List;
 
 /**
  * 用户ServiceImpl
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:37:23
  */
 @Service
 @Slf4j
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
-	@Autowired
+    @Autowired
     private UserMapper userMapper;
 
     @Override
@@ -46,10 +47,10 @@ public class UserServiceImpl implements UserService{
     public void batchInsert(List<User> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             userMapper.insert(record);
@@ -71,10 +72,10 @@ public class UserServiceImpl implements UserService{
     public void batchUpdate(List<User> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return ;
+            return;
         }
 
-        recordList.forEach(record-> {
+        recordList.forEach(record -> {
             record.setUpdateTime(LocalDateTime.now());
             userMapper.updateById(record);
         });

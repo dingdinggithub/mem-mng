@@ -8,7 +8,6 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.Dept;
 import com.kevin.mem.mng.dto.request.dept.*;
 import com.kevin.mem.mng.dto.response.dept.DeptPageResDTO;
-import com.kevin.mem.mng.service.BaseService;
 import com.kevin.mem.mng.service.DeptService;
 import lombok.extern.slf4j.Slf4j;
 import org.dozer.Mapper;
@@ -20,6 +19,7 @@ import java.util.stream.Collectors;
 
 /**
  * 部门BusinessImpl
+ *
  * @author 丁海峰
  * @date 2018-11-24 02:42:21
  */
@@ -36,7 +36,7 @@ public class DeptBusinessImpl implements DeptBusiness {
     @Override
     public BaseResponse insertDept(DeptInsertReqDTO dept) {
 
-        int result = deptService.insert(mapper.map(dept,Dept.class));
+        int result = deptService.insert(mapper.map(dept, Dept.class));
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -44,7 +44,7 @@ public class DeptBusinessImpl implements DeptBusiness {
     @Override
     public BaseResponse batchInsertDept(DeptBatchInsertReqDTO deptBatchInsertReqDTO) {
         List<Dept> deptList = deptBatchInsertReqDTO.getInsertDeptList().stream()
-                .map(item-> mapper.map(item, Dept.class)).collect(Collectors.toList());
+                .map(item -> mapper.map(item, Dept.class)).collect(Collectors.toList());
         deptService.batchInsert(deptList);
 
         return BaseResponse.createSuccessResult(null);
@@ -52,7 +52,7 @@ public class DeptBusinessImpl implements DeptBusiness {
 
     @Override
     public BaseResponse updateDept(DeptUpdateReqDTO dept) {
-        int result = deptService.updateById(mapper.map(dept,Dept.class));
+        int result = deptService.updateById(mapper.map(dept, Dept.class));
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -60,7 +60,7 @@ public class DeptBusinessImpl implements DeptBusiness {
     @Override
     public BaseResponse batchUpdateDept(DeptBatchUpdateReqDTO deptBatchUpdateReqDTO) {
         List<Dept> deptList = deptBatchUpdateReqDTO.getUpdateDeptList().stream()
-                .map(item-> mapper.map(item, Dept.class)).collect(Collectors.toList());
+                .map(item -> mapper.map(item, Dept.class)).collect(Collectors.toList());
         deptService.batchUpdate(deptList);
         return BaseResponse.createSuccessResult(null);
     }
@@ -94,11 +94,11 @@ public class DeptBusinessImpl implements DeptBusiness {
 
         Page<Dept> deptList = deptService.queryPage(request);
 
-        List<DeptPageResDTO> deptPageResDTOList = deptList.stream().map(item->mapper
-                .map(item,DeptPageResDTO.class)).collect(Collectors.toList());
+        List<DeptPageResDTO> deptPageResDTOList = deptList.stream().map(item -> mapper
+                .map(item, DeptPageResDTO.class)).collect(Collectors.toList());
 
         PageQueryResponse<DeptPageResDTO> pageQueryResponse = PageQueryResponse.createSuccessResult(deptPageResDTOList);
-        pageQueryResponse.setPageIndex(deptList.getPageNum()+1);
+        pageQueryResponse.setPageIndex(deptList.getPageNum() + 1);
         pageQueryResponse.setPageSize(deptList.getPageSize());
         return pageQueryResponse;
     }
@@ -106,9 +106,9 @@ public class DeptBusinessImpl implements DeptBusiness {
     @Override
     public BaseResponse<List<DeptPageResDTO>> queryAll(DeptPageReqDTO reqDTO) {
         return BaseResponse.createSuccessResult(
-                deptService.queryAll(mapper.map(reqDTO,Dept.class))
-                                        .stream().map(item -> mapper.map(item,DeptPageResDTO.class))
-                                                 .collect(Collectors.toList()));
+                deptService.queryAll(mapper.map(reqDTO, Dept.class))
+                        .stream().map(item -> mapper.map(item, DeptPageResDTO.class))
+                        .collect(Collectors.toList()));
     }
 
 

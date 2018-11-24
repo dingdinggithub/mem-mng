@@ -1,6 +1,6 @@
 package com.kevin.mem.mng.common;
 
-public class PageRequest<T>{
+public class PageRequest<T> {
     private static final int DEFAULT_PAGE_SIZE = 20;
     private static final int DEFAULT_PAGE_INDEX = 1;
     public static final int MAX_PAGE_SIZE = 500;
