@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kevin.mem.mng.domain.mapper.RoleAuthMapper">
+
+    <!-- 基础数据-->
+    <resultMap id="BaseResultMap" type="com.kevin.mem.mng.domain.entity.RoleAuth">
+        <id column="id" property="id"/>
+        <result column="role_id" property="roleId"/>
+        <result column="auth_id" property="authId"/>
+        <result column="remark" property="remark"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="create_by" property="createBy"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+			id,  role_id,  auth_id,  remark,  is_deleted,  create_by,  update_by,  create_time,  update_time
+	</sql>
+
+    <!--新增接口开始-->
+    <insert id="insert" parameterType="com.kevin.mem.mng.domain.entity.RoleAuth">
+        insert into t_mem_role_auth
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="roleId != null">
+                role_id,
+            </if>
+            <if test="authId != null">
+                auth_id,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="roleId != null">
+                #{roleId},
+            </if>
+            <if test="authId != null">
+                #{authId},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+        </trim>
+    </insert>
+
+    <!--更新接口开始-->
+    <update id="updateById" parameterType="com.kevin.mem.mng.domain.entity.RoleAuth">
+        update t_mem_role_auth
+        <set>
+            <if test="roleId != null">
+                role_id = #{roleId},
+            </if>
+            <if test="authId != null">
+                auth_id = #{authId},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        <where>id = #{id}</where>
+    </update>
+
+    <!--删除接口开始-->
+    <delete id="deleteById">
+        delete from t_mem_role_auth
+        <where>id = #{id}</where>
+    </delete>
+
+    <delete id="batchDelete">
+        delete from t_mem_role_auth
+        <where>
+            id in
+            <foreach collection="idList" item="id" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </delete>
+
+    <!--查询接口开始-->
+    <select id="queryPage" resultMap="BaseResultMap" parameterType="com.kevin.mem.mng.domain.entity.RoleAuth">
+        select
+        <include refid="Base_Column_List"/>
+        from t_mem_role_auth
+        <where>
+            <if test="roleId != null">
+                and role_id = #{roleId}
+            </if>
+            <if test="authId != null">
+                and auth_id = #{authId}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark}
+            </if>
+            <if test="isDeleted != null">
+                and is_deleted = #{isDeleted}
+            </if>
+            <if test="createBy != null">
+                and create_by = #{createBy}
+            </if>
+            <if test="updateBy != null">
+                and update_by = #{updateBy}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_mem_role_auth
+        <where>id = #{id}</where>
+    </select>
+</mapper>
+
+	
