@@ -4,7 +4,9 @@ import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.exception.BaseException;
 import com.kevin.mem.mng.enums.ErrorCodeEnum;
 import com.kevin.mem.mng.utils.JsonUtil;
+import com.kevin.mem.mng.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -91,6 +93,18 @@ public class BaseController {
             message = stringBuilder.toString();
 
             log.error("{} request errorCode：{}，errorMsg：{}，errorResponse：{}", request.getRequestURI(), errorCode, message, JsonUtil.toJSONString(baseResponse));
+        }  else if (ex instanceof HttpMessageNotReadableException) {
+            // 比如客户端传入的json格式有问题，可能还有其他场景
+            errorCode = ErrorCodeEnum.JSON_PARSER_ERROR.getCode();
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(ErrorCodeEnum.JSON_PARSER_ERROR.getMessage())
+                    .append("\n")
+                    .append(ex.getCause().getMessage());
+            message = ErrorCodeEnum.JSON_PARSER_ERROR.getMessage();
+
+            log.error("{} request errorCode：{}，errorMsg：{}，errorResponse：{}", request.getRequestURI(), errorCode, stringBuilder.toString(), JsonUtil.toJSONString(baseResponse));
+
         } else {
             errorCode = ErrorCodeEnum.SYSTEM_ERROR.getCode();
             message = "系统错误";

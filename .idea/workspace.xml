@@ -2,121 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e71102a-52db-424e-b990-e7e0559db8f6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/AuthModuleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/AuthModuleBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/DeptBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/DeptBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/ModuleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/ModuleBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/RoleAuthBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/RoleAuthBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/RoleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/RoleBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/RoleUserBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/RoleUserBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/UserBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/UserBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/AuthModuleBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/AuthModuleBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/DeptBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/DeptBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/ModuleBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/ModuleBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleAuthBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleAuthBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleUserBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleUserBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/UserBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/UserBusinessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/common/PageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/common/PageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/AuthModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/AuthModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/DeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/ModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/RoleAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/RoleAuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/RoleUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/RoleUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/AuthModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/AuthModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/Dept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/Dept.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/RoleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/RoleAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/RoleUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/RoleUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/AuthModuleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/AuthModuleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/BaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/BaseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/DeptMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/ModuleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/ModuleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleAuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleAuthMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/BaseRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/BaseRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModulePageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModulePageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/authModule/AuthModuleUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptPageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptPageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/dept/DeptUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModulePageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModulePageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/module/ModuleUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RolePageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RolePageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/role/RoleUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthPageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthPageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleAuth/RoleAuthUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserPageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserPageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchDeleteReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchDeleteReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserInsertReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserInsertReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserPageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserPageReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserUpdateReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserUpdateReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/authModule/AuthModulePageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/authModule/AuthModulePageResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/dept/DeptPageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/dept/DeptPageResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/module/ModulePageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/module/ModulePageResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/role/RolePageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/role/RolePageResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/roleAuth/RoleAuthPageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/roleAuth/RoleAuthPageResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/roleUser/RoleUserPageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/roleUser/RoleUserPageResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/user/UserPageResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/user/UserPageResDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/enums/ErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/enums/ErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/AuthModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/AuthModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/DeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/DeptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/ModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/ModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/RoleAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/RoleAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/RoleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/RoleUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/AuthModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/AuthModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/DeptServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/ModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/RoleAuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/RoleAuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/RoleUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/RoleUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/utils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/utils/JsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dozer/dozer-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dozer/dozer-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/authModuleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/authModuleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/deptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/deptMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/moduleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/moduleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/roleAuthMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/roleAuthMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/roleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/roleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/roleUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/roleUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,42 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RoleUserPageReqDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserPageReqDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoleUserUpdateReqDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/roleUser/RoleUserUpdateReqDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInsertReqDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserInsertReqDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserPageReqDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserPageReqDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserUpdateReqDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserUpdateReqDTO.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -200,8 +51,44 @@
       <file leaf-file-name="AuthModuleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/AuthModuleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="11">
               <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeptController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/DeptController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-476">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModuleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/ModuleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6">
+              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/BaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="107" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorCodeEnum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/enums/ErrorCodeEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -215,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthModulePageResDTO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthModulePageResDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/authModule/AuthModulePageResDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+            <state relative-caret-position="277">
+              <caret line="70" column="11" lean-forward="true" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -255,7 +142,7 @@
       <find>Page</find>
       <find>Base_Column_List</find>
       <find>User</find>
-      <find />
+      <find>/** 	 * 备注 	 */ 	@NotNull 	private String remark; 	/** 	 * 是否已删除 	 */ 	@NotNull 	private Integer isDeleted; 	/** 	 * 创建人 	 */ 	@NotNull 	private String createBy; 	/** 	 * 更新人 	 */ 	@NotNull 	private String updateBy; 	/** 	 * 创建时间 	 */ 	@NotNull 	private LocalDateTime createTime; 	/** 	 * 更新时间 	 */ 	@NotNull 	private LocalDateTime updateTime;</find>
     </findStrings>
     <replaceStrings>
       <replace>}</replace>
@@ -273,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/ServiceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/BaseRequestDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/config/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/Application.java" />
@@ -291,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/UserBusinessImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchDeleteReqDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserBatchInsertReqDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/enums/ErrorCodeEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/AuthModuleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/UserBusiness.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/entity/BaseEntity.java" />
@@ -324,6 +209,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserPageReqDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/request/user/UserUpdateReqDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/impl/RoleUserBusinessImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/enums/ErrorCodeEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/BaseController.java" />
       </list>
     </option>
   </component>
@@ -432,36 +319,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="mng" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mem-mng" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mem-mng" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mng" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mem-mng" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mem-mng" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mng" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-              <item name="response" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mem-mng" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mem-mng" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mng" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-              <item name="response" type="462c0819:PsiDirectoryNode" />
-              <item name="authModule" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mem-mng" type="b2602c69:ProjectViewProjectNode" />
@@ -653,7 +510,7 @@
       <workItem from="1541920210259" duration="2084000" />
       <workItem from="1541926686783" duration="2227000" />
       <workItem from="1541939891143" duration="72429000" />
-      <workItem from="1542986772802" duration="8970000" />
+      <workItem from="1542986772802" duration="10450000" />
     </task>
     <task id="LOCAL-00001" summary="base commit">
       <created>1537606425777</created>
@@ -673,7 +530,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111487000" />
+    <option name="totallyTimeSpent" value="112967000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,10 +563,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.17555939" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20137693" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31669536" />
       <window_info anchor="bottom" id="Spring" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.44061962" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4966443" visible="true" weight="0.3827534" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2960413" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4966443" visible="true" weight="0.2881997" />
       <window_info anchor="right" id="Bean Validation" order="4" weight="0.32980332" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3958692" />
@@ -799,30 +656,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/domain/mapper/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/user/UserPageResDTO.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -1149,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/AuthModuleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/business/AuthModuleBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1165,8 +991,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/dto/response/authModule/AuthModulePageResDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+        <state relative-caret-position="277">
+          <caret line="70" column="11" lean-forward="true" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/AuthModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/DeptController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-476">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/ModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/enums/ErrorCodeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevin/mem/mng/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="107" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
         </state>
       </provider>
     </entry>
