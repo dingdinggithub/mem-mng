@@ -16,15 +16,15 @@ import java.io.Serializable;
 public class UserUpdateReqDTO implements Serializable, DTO {
 
     /**
+     * id
+     */
+    @NotNull
+    private Long id;
+    /**
      * 用户名
      */
     @NotNull
     private String username;
-    /**
-     * 用户密码
-     */
-    @NotNull
-    private String password;
     /**
      * 用户状态
      */

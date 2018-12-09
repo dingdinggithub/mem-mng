@@ -8,20 +8,20 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.RoleUser;
 import com.kevin.mem.mng.dto.request.roleUser.*;
 import com.kevin.mem.mng.dto.response.roleUser.RoleUserPageResDTO;
+import com.kevin.mem.mng.service.BaseService;
 import com.kevin.mem.mng.service.RoleUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.util.Objects;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
  * 用户角色关系BusinessImpl
- *
  * @author 丁海峰
- * @date 2018-11-24 02:42:20
+ * @date 2018-12-09 02:18:05
  */
 @Service
 @Slf4j
@@ -36,7 +36,7 @@ public class RoleUserBusinessImpl implements RoleUserBusiness {
     @Override
     public BaseResponse insertRoleUser(RoleUserInsertReqDTO roleUser) {
 
-        int result = roleUserService.insert(mapper.map(roleUser, RoleUser.class));
+        int result = roleUserService.insert(mapper.map(roleUser,RoleUser.class));
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -44,7 +44,7 @@ public class RoleUserBusinessImpl implements RoleUserBusiness {
     @Override
     public BaseResponse batchInsertRoleUser(RoleUserBatchInsertReqDTO roleUserBatchInsertReqDTO) {
         List<RoleUser> roleUserList = roleUserBatchInsertReqDTO.getInsertRoleUserList().stream()
-                .map(item -> mapper.map(item, RoleUser.class)).collect(Collectors.toList());
+                .map(item-> mapper.map(item, RoleUser.class)).collect(Collectors.toList());
         roleUserService.batchInsert(roleUserList);
 
         return BaseResponse.createSuccessResult(null);
@@ -52,7 +52,7 @@ public class RoleUserBusinessImpl implements RoleUserBusiness {
 
     @Override
     public BaseResponse updateRoleUser(RoleUserUpdateReqDTO roleUser) {
-        int result = roleUserService.updateById(mapper.map(roleUser, RoleUser.class));
+        int result = roleUserService.updateById(mapper.map(roleUser,RoleUser.class));
 
         return BaseResponse.createSuccessResult(null);
     }
@@ -60,7 +60,7 @@ public class RoleUserBusinessImpl implements RoleUserBusiness {
     @Override
     public BaseResponse batchUpdateRoleUser(RoleUserBatchUpdateReqDTO roleUserBatchUpdateReqDTO) {
         List<RoleUser> roleUserList = roleUserBatchUpdateReqDTO.getUpdateRoleUserList().stream()
-                .map(item -> mapper.map(item, RoleUser.class)).collect(Collectors.toList());
+                .map(item-> mapper.map(item, RoleUser.class)).collect(Collectors.toList());
         roleUserService.batchUpdate(roleUserList);
         return BaseResponse.createSuccessResult(null);
     }
@@ -90,25 +90,31 @@ public class RoleUserBusinessImpl implements RoleUserBusiness {
         PageRequest<RoleUser> request = new PageRequest();
         request.setPageIndex(pageRequest.getPageIndex());
         request.setPageSize(pageRequest.getPageSize());
-        request.setModel(mapper.map(pageRequest.getModel(), RoleUser.class));
+
+        if (Objects.nonNull(pageRequest.getModel())) {
+            request.setModel(mapper.map(pageRequest.getModel(), RoleUser.class));
+        }
 
         Page<RoleUser> roleUserList = roleUserService.queryPage(request);
 
-        List<RoleUserPageResDTO> roleUserPageResDTOList = roleUserList.stream().map(item -> mapper
-                .map(item, RoleUserPageResDTO.class)).collect(Collectors.toList());
+        List<RoleUserPageResDTO> roleUserPageResDTOList = roleUserList.stream().map(item->mapper
+                .map(item,RoleUserPageResDTO.class)).collect(Collectors.toList());
 
         PageQueryResponse<RoleUserPageResDTO> pageQueryResponse = PageQueryResponse.createSuccessResult(roleUserPageResDTOList);
-        pageQueryResponse.setPageIndex(roleUserList.getPageNum() + 1);
-        pageQueryResponse.setPageSize(roleUserList.getPageSize());
+
+        pageQueryResponse.setTotalCount((int)roleUserList.getTotal());
+        pageQueryResponse.setPageSize(pageRequest.getPageSize());
+        pageQueryResponse.setPageIndex(pageRequest.getPageIndex());
+
         return pageQueryResponse;
     }
 
     @Override
     public BaseResponse<List<RoleUserPageResDTO>> queryAll(RoleUserPageReqDTO reqDTO) {
         return BaseResponse.createSuccessResult(
-                roleUserService.queryAll(mapper.map(reqDTO, RoleUser.class))
-                        .stream().map(item -> mapper.map(item, RoleUserPageResDTO.class))
-                        .collect(Collectors.toList()));
+                roleUserService.queryAll(mapper.map(reqDTO,RoleUser.class))
+                                        .stream().map(item -> mapper.map(item,RoleUserPageResDTO.class))
+                                                 .collect(Collectors.toList()));
     }
 
 
