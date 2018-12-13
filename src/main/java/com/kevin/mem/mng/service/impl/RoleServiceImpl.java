@@ -6,6 +6,7 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.Role;
 import com.kevin.mem.mng.domain.mapper.RoleMapper;
 import com.kevin.mem.mng.service.RoleService;
+import com.kevin.mem.mng.utils.IdGeneralUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,14 @@ import java.util.List;
 
 /**
  * 角色ServiceImpl
- *
  * @author 丁海峰
- * @date 2018-11-24 02:37:24
+ * @date 2018-12-11 09:34:05
  */
 @Service
 @Slf4j
-public class RoleServiceImpl implements RoleService {
+public class RoleServiceImpl implements RoleService{
 
-    @Autowired
+	@Autowired
     private RoleMapper roleMapper;
 
     @Override
@@ -39,6 +39,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public int insert(Role record) {
+		record.setId(IdGeneralUtils.generatorId());
         record.setCreateTime(LocalDateTime.now());
         return roleMapper.insert(record);
     }
@@ -47,10 +48,11 @@ public class RoleServiceImpl implements RoleService {
     public void batchInsert(List<Role> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
+			record.setId(IdGeneralUtils.generatorId());
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             roleMapper.insert(record);
@@ -72,10 +74,10 @@ public class RoleServiceImpl implements RoleService {
     public void batchUpdate(List<Role> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
             record.setUpdateTime(LocalDateTime.now());
             roleMapper.updateById(record);
         });
@@ -92,5 +94,9 @@ public class RoleServiceImpl implements RoleService {
         return roleMapper.queryPage(record);
     }
 
+    @Override
+    public List<Role> queryWithIdList(List<Long> idList) {
+        return roleMapper.queryWithIdList(idList);
+    }
 }
 	

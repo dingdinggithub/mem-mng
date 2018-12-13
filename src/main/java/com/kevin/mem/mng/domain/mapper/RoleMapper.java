@@ -1,6 +1,9 @@
 package com.kevin.mem.mng.domain.mapper;
 
 import com.kevin.mem.mng.domain.entity.Role;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 角色Mapper
@@ -10,5 +13,5 @@ import com.kevin.mem.mng.domain.entity.Role;
  */
 public interface RoleMapper extends BaseMapper<Role> {
 
+    List<Role> queryWithIdList(@Param("roleIdList") List<Long> roleIdList);
 }
-	

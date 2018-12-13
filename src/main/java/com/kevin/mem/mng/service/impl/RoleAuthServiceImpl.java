@@ -6,6 +6,7 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.RoleAuth;
 import com.kevin.mem.mng.domain.mapper.RoleAuthMapper;
 import com.kevin.mem.mng.service.RoleAuthService;
+import com.kevin.mem.mng.utils.IdGeneralUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,14 @@ import java.util.List;
 
 /**
  * 角色权限关系ServiceImpl
- *
  * @author 丁海峰
- * @date 2018-11-24 02:37:25
+ * @date 2018-12-11 09:34:06
  */
 @Service
 @Slf4j
-public class RoleAuthServiceImpl implements RoleAuthService {
+public class RoleAuthServiceImpl implements RoleAuthService{
 
-    @Autowired
+	@Autowired
     private RoleAuthMapper roleAuthMapper;
 
     @Override
@@ -39,6 +39,7 @@ public class RoleAuthServiceImpl implements RoleAuthService {
 
     @Override
     public int insert(RoleAuth record) {
+		record.setId(IdGeneralUtils.generatorId());
         record.setCreateTime(LocalDateTime.now());
         return roleAuthMapper.insert(record);
     }
@@ -47,10 +48,11 @@ public class RoleAuthServiceImpl implements RoleAuthService {
     public void batchInsert(List<RoleAuth> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
+			record.setId(IdGeneralUtils.generatorId());
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             roleAuthMapper.insert(record);
@@ -72,10 +74,10 @@ public class RoleAuthServiceImpl implements RoleAuthService {
     public void batchUpdate(List<RoleAuth> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
             record.setUpdateTime(LocalDateTime.now());
             roleAuthMapper.updateById(record);
         });

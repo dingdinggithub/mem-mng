@@ -6,6 +6,7 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.AuthModule;
 import com.kevin.mem.mng.domain.mapper.AuthModuleMapper;
 import com.kevin.mem.mng.service.AuthModuleService;
+import com.kevin.mem.mng.utils.IdGeneralUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,14 @@ import java.util.List;
 
 /**
  * 权限模块关系ServiceImpl
- *
  * @author 丁海峰
- * @date 2018-11-24 02:37:25
+ * @date 2018-12-11 09:34:05
  */
 @Service
 @Slf4j
-public class AuthModuleServiceImpl implements AuthModuleService {
+public class AuthModuleServiceImpl implements AuthModuleService{
 
-    @Autowired
+	@Autowired
     private AuthModuleMapper authModuleMapper;
 
     @Override
@@ -39,6 +39,7 @@ public class AuthModuleServiceImpl implements AuthModuleService {
 
     @Override
     public int insert(AuthModule record) {
+		record.setId(IdGeneralUtils.generatorId());
         record.setCreateTime(LocalDateTime.now());
         return authModuleMapper.insert(record);
     }
@@ -47,10 +48,11 @@ public class AuthModuleServiceImpl implements AuthModuleService {
     public void batchInsert(List<AuthModule> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
+			record.setId(IdGeneralUtils.generatorId());
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             authModuleMapper.insert(record);
@@ -72,10 +74,10 @@ public class AuthModuleServiceImpl implements AuthModuleService {
     public void batchUpdate(List<AuthModule> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
             record.setUpdateTime(LocalDateTime.now());
             authModuleMapper.updateById(record);
         });

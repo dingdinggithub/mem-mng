@@ -7,6 +7,7 @@ import com.kevin.mem.mng.business.RoleUserBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.RoleUser;
 import com.kevin.mem.mng.dto.request.roleUser.*;
+import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
 import com.kevin.mem.mng.dto.response.roleUser.RoleUserPageResDTO;
 import com.kevin.mem.mng.service.BaseService;
 import com.kevin.mem.mng.service.RoleUserService;
@@ -117,6 +118,12 @@ public class RoleUserBusinessImpl implements RoleUserBusiness {
                                                  .collect(Collectors.toList()));
     }
 
+    @Override
+    public BaseResponse<List<RolePageResDTO>> queryRoleUnderUser(Long userId) {
+        return BaseResponse.createSuccessResult(roleUserService.queryRoleUnderUser(userId)
+                                        .stream().map(item -> mapper.map(item,RolePageResDTO.class))
+                                                .collect(Collectors.toList()));
+    }
 
 }
 	

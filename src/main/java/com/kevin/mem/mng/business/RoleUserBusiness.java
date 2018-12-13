@@ -4,6 +4,8 @@ import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.dto.request.roleUser.*;
+import com.kevin.mem.mng.dto.response.TreeDataDTO;
+import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
 import com.kevin.mem.mng.dto.response.roleUser.RoleUserPageResDTO;
 
 import java.util.List;
@@ -33,6 +35,8 @@ public interface RoleUserBusiness {
     PageQueryResponse<RoleUserPageResDTO> queryPage(PageRequest<RoleUserPageReqDTO> pageRequest);
 
     BaseResponse<List<RoleUserPageResDTO>> queryAll(RoleUserPageReqDTO reqDTO);
+
+    BaseResponse<List<RolePageResDTO>> queryRoleUnderUser(Long userId);
 
 }
 	

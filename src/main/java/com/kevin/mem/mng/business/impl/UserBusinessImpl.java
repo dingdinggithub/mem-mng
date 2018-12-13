@@ -1,21 +1,32 @@
 package com.kevin.mem.mng.business.impl;
 
 import com.github.pagehelper.Page;
+import com.google.common.collect.Lists;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.business.UserBusiness;
 import com.kevin.mem.mng.common.PageRequest;
+import com.kevin.mem.mng.domain.entity.Role;
+import com.kevin.mem.mng.domain.entity.RoleUser;
 import com.kevin.mem.mng.domain.entity.User;
 import com.kevin.mem.mng.dto.request.user.*;
+import com.kevin.mem.mng.dto.response.TreeDataDTO;
+import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 import com.kevin.mem.mng.service.BaseService;
+import com.kevin.mem.mng.service.RoleService;
+import com.kevin.mem.mng.service.RoleUserService;
 import com.kevin.mem.mng.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -32,6 +43,12 @@ public class UserBusinessImpl implements UserBusiness {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleUserService roleUserService;
+
+    @Autowired
+    private RoleService roleService;
 
     @Override
     public BaseResponse insertUser(UserInsertReqDTO user) {
@@ -115,6 +132,44 @@ public class UserBusinessImpl implements UserBusiness {
                 userService.queryAll(mapper.map(reqDTO,User.class))
                                         .stream().map(item -> mapper.map(item,UserPageResDTO.class))
                                                  .collect(Collectors.toList()));
+    }
+
+    @Override
+    public BaseResponse<String> queryTreeRoleUnderUser(Long userId) {
+        List<Role> roleList = roleService.queryAll(new Role());
+        RoleUser roleUser = new RoleUser();
+        roleUser.setUserId(userId);
+        List<RoleUser> roleUserList = roleUserService.queryAll(roleUser);
+        TreeDataDTO rootTreeDTO = new TreeDataDTO(0L, "所有角色");
+        rootTreeDTO.setChildren(getChildTree(roleList, roleUserList));
+
+        //存在checked角色
+        if (CollectionUtils.isNotEmpty(roleUserList)) {
+            rootTreeDTO.setChecked(true);
+        }
+        return BaseResponse.createSuccessResult(rootTreeDTO.toString());
+    }
+
+    /**
+     * 初始化角色树
+     *
+     * @param allRole
+     * @param roleUserList
+     * @return
+     */
+    private List<TreeDataDTO> getChildTree(List<Role> allRole, List<RoleUser> roleUserList) {
+        List<TreeDataDTO> childRole = Lists.newArrayList();
+        allRole.forEach(role -> {
+            Optional<RoleUser> roleUserOptional = roleUserList.stream()
+                    .filter(item -> item.getRoleId().equals(role.getId())).findFirst();
+            if (roleUserOptional.isPresent()) {
+                childRole.add(new TreeDataDTO(role.getId(), role.getName(), true));
+            } else {
+                childRole.add(new TreeDataDTO(role.getId(), role.getName()));
+            }
+        });
+
+        return childRole;
     }
 
 

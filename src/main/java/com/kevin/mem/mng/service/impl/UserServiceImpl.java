@@ -6,6 +6,7 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.User;
 import com.kevin.mem.mng.domain.mapper.UserMapper;
 import com.kevin.mem.mng.service.UserService;
+import com.kevin.mem.mng.utils.IdGeneralUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,14 @@ import java.util.List;
 
 /**
  * 用户ServiceImpl
- *
  * @author 丁海峰
- * @date 2018-11-24 02:37:23
+ * @date 2018-12-11 09:34:03
  */
 @Service
 @Slf4j
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
 
-    @Autowired
+	@Autowired
     private UserMapper userMapper;
 
     @Override
@@ -39,6 +39,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int insert(User record) {
+		record.setId(IdGeneralUtils.generatorId());
         record.setCreateTime(LocalDateTime.now());
         return userMapper.insert(record);
     }
@@ -47,10 +48,11 @@ public class UserServiceImpl implements UserService {
     public void batchInsert(List<User> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
+			record.setId(IdGeneralUtils.generatorId());
             record.setCreateTime(LocalDateTime.now());
             record.setUpdateTime(LocalDateTime.now());
             userMapper.insert(record);
@@ -72,10 +74,10 @@ public class UserServiceImpl implements UserService {
     public void batchUpdate(List<User> recordList) {
 
         if (CollectionUtils.isEmpty(recordList)) {
-            return;
+            return ;
         }
 
-        recordList.forEach(record -> {
+        recordList.forEach(record-> {
             record.setUpdateTime(LocalDateTime.now());
             userMapper.updateById(record);
         });

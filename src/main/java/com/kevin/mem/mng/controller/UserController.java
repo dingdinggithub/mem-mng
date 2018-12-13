@@ -1,10 +1,17 @@
 package com.kevin.mem.mng.controller;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
+import com.kevin.mem.mng.business.RoleBusiness;
+import com.kevin.mem.mng.business.RoleUserBusiness;
 import com.kevin.mem.mng.business.UserBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.common.log.OperatorLog;
+import com.kevin.mem.mng.dto.request.role.RolePageReqDTO;
+import com.kevin.mem.mng.dto.request.roleUser.RoleUserPageReqDTO;
 import com.kevin.mem.mng.dto.request.user.*;
+import com.kevin.mem.mng.dto.response.TreeDataDTO;
+import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
+import com.kevin.mem.mng.dto.response.roleUser.RoleUserPageResDTO;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +33,12 @@ public class UserController extends BaseController {
 
     @Autowired
     private UserBusiness userBusiness;
+
+    @Autowired
+    private RoleUserBusiness roleUserBusiness;
+
+    @Autowired
+    private RoleBusiness roleBusiness;
 
     @ApiOperation("插入接口")
     @PostMapping("/insertUser")
@@ -90,6 +103,13 @@ public class UserController extends BaseController {
     @OperatorLog(description = "/queryAll")
     public BaseResponse<List<UserPageResDTO>> queryAll(@RequestBody @Validated UserPageReqDTO reqDTO){
         return userBusiness.queryAll(reqDTO);
+    }
+
+    @ApiOperation("获取用户下的角色树接口")
+    @GetMapping("/queryRoleUnderUser")
+    @OperatorLog(description = "/queryRoleUnderUser")
+    public BaseResponse<String> queryTreeRoleUnderUser(Long id){
+        return userBusiness.queryTreeRoleUnderUser(id);
     }
 
 }
