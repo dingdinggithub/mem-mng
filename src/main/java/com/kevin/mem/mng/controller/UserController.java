@@ -6,23 +6,18 @@ import com.kevin.mem.mng.business.RoleUserBusiness;
 import com.kevin.mem.mng.business.UserBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.common.log.OperatorLog;
-import com.kevin.mem.mng.dto.request.role.RolePageReqDTO;
-import com.kevin.mem.mng.dto.request.roleUser.RoleUserPageReqDTO;
+import com.kevin.mem.mng.dto.request.UpdateTreeReqDTO;
 import com.kevin.mem.mng.dto.request.user.*;
-import com.kevin.mem.mng.dto.response.TreeDataDTO;
-import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
-import com.kevin.mem.mng.dto.response.roleUser.RoleUserPageResDTO;
+import com.kevin.mem.mng.dto.response.UpdateTreeAuthListResDTO;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import com.kevin.mem.mng.dto.ResultResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
@@ -108,8 +103,15 @@ public class UserController extends BaseController {
     @ApiOperation("获取用户下的角色树接口")
     @GetMapping("/queryRoleUnderUser")
     @OperatorLog(description = "/queryRoleUnderUser")
-    public BaseResponse<String> queryTreeRoleUnderUser(Long id){
+    public BaseResponse<UpdateTreeAuthListResDTO> queryTreeRoleUnderUser(Long id){
         return userBusiness.queryTreeRoleUnderUser(id);
+    }
+
+    @ApiOperation("更新用户下的角色树接口")
+    @PostMapping("/updateRoleUnderUser")
+    @OperatorLog(description = "/updateRoleUnderUser")
+    public BaseResponse<String> updateRoleUnderUser(@RequestBody @Validated UpdateTreeReqDTO roleReqDTO){
+        return userBusiness.updateRoleUnderUser(roleReqDTO);
     }
 
 }

@@ -23,6 +23,7 @@ public class RoleUserUpdateReqDTO implements Serializable, DTO {
 	 */
 	@NotNull
 	private Long roleId;
+
 	/**
 	 * 用户Id
 	 */

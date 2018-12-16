@@ -1,12 +1,14 @@
 package com.kevin.mem.mng.business.impl;
 
 import com.github.pagehelper.Page;
+import com.google.common.collect.Lists;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.business.ModuleBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.Module;
 import com.kevin.mem.mng.dto.request.module.*;
+import com.kevin.mem.mng.dto.response.KeyValueLevelDTO;
 import com.kevin.mem.mng.dto.response.module.ModulePageResDTO;
 import com.kevin.mem.mng.service.BaseService;
 import com.kevin.mem.mng.service.ModuleService;
@@ -115,6 +117,20 @@ public class ModuleBusinessImpl implements ModuleBusiness {
                 moduleService.queryAll(mapper.map(reqDTO,Module.class))
                                         .stream().map(item -> mapper.map(item,ModulePageResDTO.class))
                                                  .collect(Collectors.toList()));
+    }
+
+    @Override
+    public List<KeyValueLevelDTO> dircModule() {
+        List<KeyValueLevelDTO> moduleDir = Lists.newArrayList();
+
+        moduleService.queryAll(new Module()).forEach(item-> {
+            KeyValueLevelDTO keyValue = new KeyValueLevelDTO();
+            keyValue.setCode(item.getId());
+            keyValue.setDesc(item.getName());
+            moduleDir.add(keyValue);
+        });
+
+        return moduleDir;
     }
 
 

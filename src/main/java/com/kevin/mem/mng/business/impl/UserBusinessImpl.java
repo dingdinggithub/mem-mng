@@ -9,11 +9,12 @@ import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.Role;
 import com.kevin.mem.mng.domain.entity.RoleUser;
 import com.kevin.mem.mng.domain.entity.User;
+import com.kevin.mem.mng.dto.request.UpdateTreeReqDTO;
 import com.kevin.mem.mng.dto.request.user.*;
 import com.kevin.mem.mng.dto.response.TreeDataDTO;
-import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
+import com.kevin.mem.mng.dto.response.UpdateTreeAuthListResDTO;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
-import com.kevin.mem.mng.service.BaseService;
+import com.kevin.mem.mng.enums.StatusEnum;
 import com.kevin.mem.mng.service.RoleService;
 import com.kevin.mem.mng.service.RoleUserService;
 import com.kevin.mem.mng.service.UserService;
@@ -23,7 +24,6 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.List;
 import java.util.Optional;
@@ -116,6 +116,7 @@ public class UserBusinessImpl implements UserBusiness {
 
         List<UserPageResDTO> userPageResDTOList = userList.stream().map(item->mapper
                 .map(item,UserPageResDTO.class)).collect(Collectors.toList());
+        userPageResDTOList.forEach(item-> item.setStatusDesc(StatusEnum.getDesc(item.getStatus())));
 
         PageQueryResponse<UserPageResDTO> pageQueryResponse = PageQueryResponse.createSuccessResult(userPageResDTOList);
 
@@ -135,7 +136,7 @@ public class UserBusinessImpl implements UserBusiness {
     }
 
     @Override
-    public BaseResponse<String> queryTreeRoleUnderUser(Long userId) {
+    public BaseResponse<UpdateTreeAuthListResDTO> queryTreeRoleUnderUser(Long userId) {
         List<Role> roleList = roleService.queryAll(new Role());
         RoleUser roleUser = new RoleUser();
         roleUser.setUserId(userId);
@@ -147,7 +148,38 @@ public class UserBusinessImpl implements UserBusiness {
         if (CollectionUtils.isNotEmpty(roleUserList)) {
             rootTreeDTO.setChecked(true);
         }
-        return BaseResponse.createSuccessResult(rootTreeDTO.toString());
+
+        UpdateTreeAuthListResDTO updateTreeAuthListResDTO = new UpdateTreeAuthListResDTO();
+        updateTreeAuthListResDTO.setModelId(userId);
+        updateTreeAuthListResDTO.setTreeJson(rootTreeDTO.toString());
+
+        return BaseResponse.createSuccessResult(updateTreeAuthListResDTO);
+    }
+
+    @Override
+    public BaseResponse updateRoleUnderUser(UpdateTreeReqDTO roleReqDTO) {
+        RoleUser roleUser = new RoleUser();
+        roleUser.setUserId(roleReqDTO.getModelId());
+        List<RoleUser> roleUserList = roleUserService.queryAll(roleUser);
+
+        List<Long> idList = roleUserList.stream().map(RoleUser::getId).collect(Collectors.toList());
+        if (CollectionUtils.isNotEmpty(idList)) {
+            roleUserService.batchDelete(idList);
+        }
+
+        roleUserList.clear();
+
+        roleReqDTO.getModelIdList().forEach(item-> {
+            final RoleUser roleUserInsert = new RoleUser();
+            roleUserInsert.setUserId(roleReqDTO.getModelId());
+            roleUserInsert.setRoleId(item);
+
+            roleUserList.add(roleUserInsert);
+        });
+
+        roleUserService.batchInsert(roleUserList);
+
+        return BaseResponse.createSuccessResult(null);
     }
 
     /**

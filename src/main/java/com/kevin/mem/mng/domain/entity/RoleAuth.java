@@ -1,6 +1,7 @@
 package com.kevin.mem.mng.domain.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 角色权限关系Entity
@@ -9,6 +10,7 @@ import lombok.Data;
  * @date 2018-11-24 02:22:01
  */
 @Data
+@NoArgsConstructor
 public class RoleAuth extends BaseEntity {
 
     /**
@@ -20,6 +22,8 @@ public class RoleAuth extends BaseEntity {
      */
     private Long authId;
 
-
+    public RoleAuth(Long roleId) {
+        this.roleId = roleId;
+    }
 }
 	

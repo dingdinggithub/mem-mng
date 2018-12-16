@@ -1,21 +1,28 @@
 package com.kevin.mem.mng.business.impl;
 
 import com.github.pagehelper.Page;
+import com.google.common.collect.Lists;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.business.RoleBusiness;
 import com.kevin.mem.mng.common.PageRequest;
-import com.kevin.mem.mng.domain.entity.Role;
+import com.kevin.mem.mng.domain.entity.*;
 import com.kevin.mem.mng.dto.request.role.*;
+import com.kevin.mem.mng.dto.request.UpdateTreeReqDTO;
+import com.kevin.mem.mng.dto.response.TreeDataDTO;
 import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
-import com.kevin.mem.mng.service.BaseService;
+import com.kevin.mem.mng.dto.response.UpdateTreeAuthListResDTO;
+import com.kevin.mem.mng.service.AuthModuleService;
+import com.kevin.mem.mng.service.RoleAuthService;
 import com.kevin.mem.mng.service.RoleService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Objects;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -32,6 +39,12 @@ public class RoleBusinessImpl implements RoleBusiness {
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private RoleAuthService roleAuthService;
+
+    @Autowired
+    private AuthModuleService authModuleService;
 
     @Override
     public BaseResponse insertRole(RoleInsertReqDTO role) {
@@ -117,6 +130,74 @@ public class RoleBusinessImpl implements RoleBusiness {
                                                  .collect(Collectors.toList()));
     }
 
+    /**
+     * 初始化权限树
+     *
+     * @param allAuth
+     * @param roleAuthList
+     * @return
+     */
+    private List<TreeDataDTO> getChildTree(List<AuthModule> allAuth, List<RoleAuth> roleAuthList) {
+        List<TreeDataDTO> treeDataDTOList = Lists.newArrayList();
+        allAuth.forEach(auth -> {
+            Optional<RoleAuth> roleAuthOptional = roleAuthList.stream()
+                    .filter(item -> item.getAuthId().equals(auth.getId())).findFirst();
+            if (roleAuthOptional.isPresent()) {
+                treeDataDTOList.add(new TreeDataDTO(auth.getId(), auth.getName(), true));
+            } else {
+                treeDataDTOList.add(new TreeDataDTO(auth.getId(), auth.getName()));
+            }
+        });
+
+        return treeDataDTOList;
+    }
+
+    @Override
+    public BaseResponse<UpdateTreeAuthListResDTO> queryTreeAuthUnderRole(Long roleId) {
+        List<AuthModule> moduleList = authModuleService.queryAll(new AuthModule());
+        RoleAuth roleAuth = new RoleAuth();
+        roleAuth.setRoleId(roleId);
+        List<RoleAuth> roleAuthList = roleAuthService.queryAll(roleAuth);
+        TreeDataDTO rootTreeDTO = new TreeDataDTO(0L, "所有权限");
+        rootTreeDTO.setChildren(getChildTree(moduleList, roleAuthList));
+
+        //存在checked角色
+        if (CollectionUtils.isNotEmpty(roleAuthList)) {
+            rootTreeDTO.setChecked(true);
+        }
+
+        UpdateTreeAuthListResDTO updateTreeAuthListResDTO = new UpdateTreeAuthListResDTO();
+        updateTreeAuthListResDTO.setModelId(roleId);
+        updateTreeAuthListResDTO.setTreeJson(rootTreeDTO.toString());
+
+        return BaseResponse.createSuccessResult(updateTreeAuthListResDTO);
+    }
+
+    @Override
+    public BaseResponse updateTreeAuthUnderRole(UpdateTreeReqDTO roleReqDTO) {
+        RoleAuth roleAuth = new RoleAuth();
+        roleAuth.setRoleId(roleReqDTO.getModelId());
+        List<RoleAuth> roleAuthList = roleAuthService.queryAll(roleAuth);
+
+        List<Long> idList = roleAuthList.stream().map(RoleAuth::getId).collect(Collectors.toList());
+        if (CollectionUtils.isNotEmpty(idList)) {
+            roleAuthService.batchDelete(idList);
+        }
+
+        roleAuthList.clear();
+
+        roleReqDTO.getModelIdList().forEach(item-> {
+            final RoleAuth roleAuthInsert = new RoleAuth();
+            roleAuthInsert.setRoleId(roleReqDTO.getModelId());
+            roleAuthInsert.setAuthId(item);
+
+            roleAuthList.add(roleAuthInsert);
+        });
+
+        roleAuthService.batchInsert(roleAuthList);
+
+        return BaseResponse.createSuccessResult(null);
+    }
 
 }
 	

@@ -38,7 +38,6 @@ public class ModuleInsertReqDTO implements Serializable, DTO {
 	/**
 	 * 状态，1：正常，0：冻结
 	 */
-	@NotNull
 	private Integer status;
 	
 }

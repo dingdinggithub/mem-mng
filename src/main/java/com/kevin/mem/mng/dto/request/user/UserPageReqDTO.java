@@ -20,10 +20,6 @@ public class UserPageReqDTO implements Serializable, DTO {
 	 */
 	private String username;
 	/**
-	 * 用户密码
-	 */
-	private String password;
-	/**
 	 * 用户状态
 	 */
 	private Integer status;

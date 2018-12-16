@@ -1,6 +1,7 @@
 package com.kevin.mem.mng.dto.response.dept;
 
 import com.kevin.common.domain.dto.DTO;
+import com.kevin.mem.mng.enums.StatusEnum;
 import lombok.Data;
 
 import java.io.Serializable;

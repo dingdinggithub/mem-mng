@@ -3,9 +3,9 @@ package com.kevin.mem.mng.business;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.common.PageRequest;
+import com.kevin.mem.mng.dto.request.UpdateTreeReqDTO;
 import com.kevin.mem.mng.dto.request.user.*;
-import com.kevin.mem.mng.dto.response.TreeDataDTO;
-import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
+import com.kevin.mem.mng.dto.response.UpdateTreeAuthListResDTO;
 import com.kevin.mem.mng.dto.response.user.UserPageResDTO;
 
 import java.util.List;
@@ -36,6 +36,8 @@ public interface UserBusiness {
 
     BaseResponse<List<UserPageResDTO>> queryAll(UserPageReqDTO reqDTO);
 
-    BaseResponse<String> queryTreeRoleUnderUser(Long userId);
+    BaseResponse<UpdateTreeAuthListResDTO> queryTreeRoleUnderUser(Long userId);
+
+    BaseResponse updateRoleUnderUser(UpdateTreeReqDTO roleReqDTO);
 }
 	

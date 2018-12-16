@@ -5,12 +5,11 @@
 	<!-- 基础数据-->
 	<resultMap id="BaseResultMap" type="com.kevin.mem.mng.domain.entity.AuthModule" >
 		<id column="id" property="id"/>
-		<result column="code" property="code"/>
 		<result column="name" property="name"/>
 		<result column="module_id" property="moduleId"/>
+		<result column="moduleName" property="moduleName"/>
 		<result column="url" property="url"/>
 		<result column="type" property="type"/>
-		<result column="seq" property="seq"/>
 		<result column="status" property="status"/>
 		<result column="remark" property="remark"/>
 		<result column="is_deleted" property="isDeleted"/>
@@ -21,7 +20,7 @@
 	</resultMap>
 	
 	<sql id="Base_Column_List">
-			id,  code,  name,  module_id,  url,  type,  seq,  status,  remark,  is_deleted,  create_by,  update_by,  create_time,  update_time
+			id,  name,  module_id,  url,  type,  status,  remark,  is_deleted,  create_by,  update_by,  create_time,  update_time
 	</sql>
 
 	<!--新增接口开始-->
@@ -30,9 +29,6 @@
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 		<if test="id != null">
 			id,
-			</if>
-			<if test="code != null">
-			code,
 			</if>
 			<if test="name != null">
 			name,
@@ -45,9 +41,6 @@
 			</if>
 			<if test="type != null">
 			type,
-			</if>
-			<if test="seq != null">
-			seq,
 			</if>
 			<if test="status != null">
 			status,
@@ -75,9 +68,6 @@
 		<if test="id != null">
 			#{id},
 		</if>
-			<if test="code != null">
-			#{code},
-			</if>
 			<if test="name != null">
 			#{name},
 			</if>
@@ -89,9 +79,6 @@
 			</if>
 			<if test="type != null">
 			#{type},
-			</if>
-			<if test="seq != null">
-			#{seq},
 			</if>
 			<if test="status != null">
 			#{status},
@@ -121,9 +108,6 @@
 	<update id="updateById" parameterType="com.kevin.mem.mng.domain.entity.AuthModule" >
 		update t_mem_auth_module
 		<set>
-			<if test="code != null">
-				code = #{code},
-			</if>
 			<if test="name != null">
 				name = #{name},
 			</if>
@@ -135,9 +119,6 @@
 			</if>
 			<if test="type != null">
 				type = #{type},
-			</if>
-			<if test="seq != null">
-				seq = #{seq},
 			</if>
 			<if test="status != null">
 				status = #{status},
@@ -183,56 +164,36 @@
   <!--查询接口开始-->
   <select id="queryPage" resultMap="BaseResultMap" parameterType="com.kevin.mem.mng.domain.entity.AuthModule">
     select
-    <include refid="Base_Column_List" />
-    from t_mem_auth_module
+	  tmam.id,  tmam.name,  tmam.module_id,  tmam.url,  tmam.type,  tmam.status , tmm.name as moduleName
+    from t_mem_auth_module tmam
+	left join t_mem_module tmm
+	on tmam.module_id = tmm.id
     <where>
-		<if test="code != null">
-			and code = #{code}
-		</if>
 		<if test="name != null">
-			and name = #{name}
+			and tmam.name = #{name}
 		</if>
 		<if test="moduleId != null">
-			and module_id = #{moduleId}
+			and tmam.module_id = #{moduleId}
 		</if>
 		<if test="url != null">
-			and url = #{url}
+			and tmam.url = #{url}
 		</if>
 		<if test="type != null">
-			and type = #{type}
-		</if>
-		<if test="seq != null">
-			and seq = #{seq}
+			and tmam.type = #{type}
 		</if>
 		<if test="status != null">
-			and status = #{status}
-		</if>
-		<if test="remark != null">
-			and remark = #{remark}
-		</if>
-		<if test="isDeleted != null">
-			and is_deleted = #{isDeleted}
-		</if>
-		<if test="createBy != null">
-			and create_by = #{createBy}
-		</if>
-		<if test="updateBy != null">
-			and update_by = #{updateBy}
-		</if>
-		<if test="createTime != null">
-			and create_time = #{createTime}
-		</if>
-		<if test="updateTime != null">
-			and update_time = #{updateTime}
+			and tmam.status = #{status}
 		</if>
     </where>
   </select>
 
   <select id="selectById" resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List" />
-    from t_mem_auth_module
-    <where> id = #{id} </where>
+	  tmam.id,  tmam.name,  tmam.module_id,  tmam.url,  tmam.type,  tmam.status , tmm.name as moduleName
+	from t_mem_auth_module tmam
+	left join t_mem_module tmm
+	on tmam.module_id = tmm.id
+    <where> tmam.id = #{id} </where>
   </select>
 </mapper>
 

@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Data
 public class KeyValueLevelDTO {
-    private Integer code;//字段编号
+    private Long code;//字段编号
 
     private String desc;//字段描述
 

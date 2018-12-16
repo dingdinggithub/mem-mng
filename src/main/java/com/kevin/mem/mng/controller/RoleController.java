@@ -1,10 +1,14 @@
 package com.kevin.mem.mng.controller;
 import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
+import com.kevin.mem.mng.business.RoleAuthBusiness;
 import com.kevin.mem.mng.business.RoleBusiness;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.common.log.OperatorLog;
+import com.kevin.mem.mng.domain.entity.RoleAuth;
+import com.kevin.mem.mng.dto.request.UpdateTreeReqDTO;
 import com.kevin.mem.mng.dto.request.role.*;
+import com.kevin.mem.mng.dto.response.UpdateTreeAuthListResDTO;
 import com.kevin.mem.mng.dto.response.role.RolePageResDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -90,6 +94,20 @@ public class RoleController extends BaseController {
     @OperatorLog(description = "/queryAll")
     public BaseResponse<List<RolePageResDTO>> queryAll(@RequestBody @Validated RolePageReqDTO reqDTO){
         return roleBusiness.queryAll(reqDTO);
+    }
+
+    @ApiOperation("获取用户下的角色树接口")
+    @GetMapping("/queryAuthUnderRole")
+    @OperatorLog(description = "/queryAuthUnderRole")
+    public BaseResponse<UpdateTreeAuthListResDTO> queryTreeAuthUnderRole(Long id){
+        return roleBusiness.queryTreeAuthUnderRole(id);
+    }
+
+    @ApiOperation("更新用户下的角色树接口")
+    @PostMapping("/updateAuthUnderRole")
+    @OperatorLog(description = "/updateAuthUnderRole")
+    public BaseResponse<String> updateTreeAuthUnderRole(@RequestBody @Validated UpdateTreeReqDTO roleReqDTO){
+        return roleBusiness.updateTreeAuthUnderRole(roleReqDTO);
     }
 
 }

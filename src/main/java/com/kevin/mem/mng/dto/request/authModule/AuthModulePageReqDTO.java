@@ -16,10 +16,6 @@ import java.time.LocalDateTime;
 public class AuthModulePageReqDTO implements Serializable, DTO {
 
 	/**
-	 * 权限码
-	 */
-	private String code;
-	/**
 	 * 权限名称
 	 */
 	private String name;

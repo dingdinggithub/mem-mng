@@ -1,6 +1,8 @@
 package com.kevin.mem.mng.dto.response.role;
 
 import com.kevin.common.domain.dto.DTO;
+import com.kevin.mem.mng.enums.RoleTypeEnum;
+import com.kevin.mem.mng.enums.StatusEnum;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -27,10 +29,20 @@ public class RolePageResDTO implements Serializable, DTO {
      * 角色的类型，1：管理员角色，2：其他
      */
     private Integer type;
+
+    /**
+     * 角色的类型，1：管理员角色，2：其他
+     */
+    private String typeDesc;
     /**
      * 状态
      */
     private Integer status;
+
+    /**
+     * 状态
+     */
+    private String statusDesc;
     /**
      * 备注
      */
@@ -55,6 +67,16 @@ public class RolePageResDTO implements Serializable, DTO {
      * 更新时间
      */
     private LocalDateTime updateTime;
+
+    public void setType(Integer type) {
+        this.type = type;
+        this.typeDesc = RoleTypeEnum.getDesc(type);
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+        this.statusDesc = StatusEnum.getDesc(this.status);
+    }
 
 }
 	

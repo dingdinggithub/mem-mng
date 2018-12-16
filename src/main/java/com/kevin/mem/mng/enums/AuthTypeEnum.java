@@ -1,4 +1,4 @@
-package com.kevin.mem.mng.enums.system;
+package com.kevin.mem.mng.enums;
 
 import com.kevin.mem.mng.dto.response.KeyValueLevelDTO;
 import lombok.Getter;
@@ -15,37 +15,37 @@ import java.util.stream.Collectors;
  * @Description
  */
 @Getter
-public enum StatusEnum {
-    NORMAL_STATUS(0, "正常"),
-    CLOSED_STATUS(1, "关闭"),
-
+public enum AuthTypeEnum {
+    ADMIN_ROLE(0, "菜单"),
+    NORMAL_ROLE(1, "按钮"),
+    OTHERS_ROLE(2, "其他"),
     ;
 
     private final Integer code;
     private final String desc;
 
-    StatusEnum(Integer code, String desc) {
+    AuthTypeEnum(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
     }
 
     public static String getDesc(Integer code) {
-        Optional<StatusEnum> removeMethodEnum = Arrays.stream(StatusEnum.values())
+        Optional<AuthTypeEnum> removeMethodEnum = Arrays.stream(AuthTypeEnum.values())
                 .filter(c -> c.getCode().equals(code)).findFirst();
-        return removeMethodEnum.map(StatusEnum::getDesc).orElse(StringUtils.EMPTY);
+        return removeMethodEnum.map(AuthTypeEnum::getDesc).orElse(StringUtils.EMPTY);
     }
 
-    public static Optional<StatusEnum> ofEnum(Integer code) {
-        return Arrays.stream(StatusEnum.values())
+    public static Optional<AuthTypeEnum> ofEnum(Integer code) {
+        return Arrays.stream(AuthTypeEnum.values())
                                 .filter(c -> c.getCode()
                                         .equals(code)).findFirst();
     }
 
 
     public static List<KeyValueLevelDTO> getList() {
-        return Arrays.stream(StatusEnum.values()).map(c -> {
+        return Arrays.stream(AuthTypeEnum.values()).map(c -> {
             final KeyValueLevelDTO dictDTO = new KeyValueLevelDTO();
-            dictDTO.setCode(c.getCode());
+            dictDTO.setCode(Long.valueOf(c.getCode()));
             dictDTO.setDesc(c.getDesc());
             return dictDTO;
         }).collect(Collectors.toList());

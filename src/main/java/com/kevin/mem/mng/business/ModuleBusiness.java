@@ -4,6 +4,7 @@ import com.kevin.common.domain.response.BaseResponse;
 import com.kevin.common.domain.response.PageQueryResponse;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.dto.request.module.*;
+import com.kevin.mem.mng.dto.response.KeyValueLevelDTO;
 import com.kevin.mem.mng.dto.response.module.ModulePageResDTO;
 
 import java.util.List;
@@ -33,6 +34,8 @@ public interface ModuleBusiness {
     PageQueryResponse<ModulePageResDTO> queryPage(PageRequest<ModulePageReqDTO> pageRequest);
 
     BaseResponse<List<ModulePageResDTO>> queryAll(ModulePageReqDTO reqDTO);
+
+    List<KeyValueLevelDTO> dircModule();
 
 }
 	

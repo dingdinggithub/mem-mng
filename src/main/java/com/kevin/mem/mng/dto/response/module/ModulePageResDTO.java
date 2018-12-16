@@ -1,6 +1,7 @@
 package com.kevin.mem.mng.dto.response.module;
 
 import com.kevin.common.domain.dto.DTO;
+import com.kevin.mem.mng.enums.StatusEnum;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -39,6 +40,11 @@ public class ModulePageResDTO implements Serializable, DTO {
      * 状态，1：正常，0：冻结
      */
     private Integer status;
+
+    /**
+     * 状态，1：正常，0：冻结
+     */
+    private String statusDesc;
     /**
      * 备注
      */
@@ -63,6 +69,11 @@ public class ModulePageResDTO implements Serializable, DTO {
      * 更新时间
      */
     private LocalDateTime updateTime;
+
+    public void setStatus(Integer status) {
+        this.status = status;
+        this.statusDesc = StatusEnum.getDesc(this.status);
+    }
 
 }
 	

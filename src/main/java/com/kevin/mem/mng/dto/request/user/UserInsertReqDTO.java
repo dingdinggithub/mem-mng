@@ -28,7 +28,6 @@ public class UserInsertReqDTO implements Serializable, DTO {
 	/**
 	 * 用户状态
 	 */
-	@NotNull
 	private Integer status;
 	/**
 	 * 手机号

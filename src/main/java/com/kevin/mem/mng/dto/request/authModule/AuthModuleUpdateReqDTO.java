@@ -19,11 +19,6 @@ public class AuthModuleUpdateReqDTO implements Serializable, DTO {
     private Long id;
 
 	/**
-	 * 权限码
-	 */
-	@NotNull
-	private String code;
-	/**
 	 * 权限名称
 	 */
 	@NotNull
@@ -43,11 +38,6 @@ public class AuthModuleUpdateReqDTO implements Serializable, DTO {
 	 */
 	@NotNull
 	private Integer type;
-	/**
-	 * 权限模块在当前层级下的顺序，由小到大
-	 */
-	@NotNull
-	private Integer seq;
 	/**
 	 * 状态，1：正常，0：冻结
 	 */

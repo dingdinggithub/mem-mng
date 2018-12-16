@@ -28,7 +28,6 @@ public class RoleInsertReqDTO implements Serializable, DTO {
 	/**
 	 * 状态
 	 */
-	@NotNull
 	private Integer status;
 	
 }

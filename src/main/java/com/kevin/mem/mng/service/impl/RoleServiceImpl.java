@@ -4,6 +4,8 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.kevin.mem.mng.common.PageRequest;
 import com.kevin.mem.mng.domain.entity.Role;
+import com.kevin.mem.mng.domain.entity.RoleAuth;
+import com.kevin.mem.mng.domain.mapper.RoleAuthMapper;
 import com.kevin.mem.mng.domain.mapper.RoleMapper;
 import com.kevin.mem.mng.service.RoleService;
 import com.kevin.mem.mng.utils.IdGeneralUtils;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 角色ServiceImpl
@@ -27,8 +30,17 @@ public class RoleServiceImpl implements RoleService{
 	@Autowired
     private RoleMapper roleMapper;
 
+    @Autowired
+    private RoleAuthMapper roleAuthMapper;
+
     @Override
     public int deleteById(Long id) {
+
+        Page<RoleAuth> roleAuthPage = roleAuthMapper.queryPage(new RoleAuth(id));
+        if (CollectionUtils.isNotEmpty(roleAuthPage)) {
+            roleAuthMapper.batchDelete(roleAuthPage.stream().map(RoleAuth::getId).collect(Collectors.toList()));
+        }
+
         return roleMapper.deleteById(id);
     }
 

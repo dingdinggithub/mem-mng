@@ -12,10 +12,6 @@ import lombok.Data;
 public class AuthModule extends BaseEntity {
 
     /**
-     * 权限码
-     */
-    private String code;
-    /**
      * 权限名称
      */
     private String name;
@@ -23,6 +19,11 @@ public class AuthModule extends BaseEntity {
      * 权限所在的模块id
      */
     private Long moduleId;
+
+    /**
+     * 权限所在的模块名
+     */
+    private String moduleName;
     /**
      * 请求的url
      */
@@ -31,10 +32,6 @@ public class AuthModule extends BaseEntity {
      * 类型，1：菜单，2：按钮，3：其他
      */
     private Integer type;
-    /**
-     * 权限模块在当前层级下的顺序，由小到大
-     */
-    private Integer seq;
     /**
      * 状态，1：正常，0：冻结
      */
